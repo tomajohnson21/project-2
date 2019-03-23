@@ -17,12 +17,5 @@ module.exports = function(sequelize, DataTypes) {
       insta_link: DataTypes.STRING
     });
 
-    Artist.associate = function(models) {
-
-        Artist.hasMany(models.Member, {
-            onDelete: "cascade"
-        });
-    };
-    
     return Artist;
 };

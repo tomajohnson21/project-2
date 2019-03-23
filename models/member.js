@@ -1,4 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
+    
     var Member = sequelize.define("Members", {
       member_name: {
           type: DataTypes.STRING,
@@ -16,6 +17,6 @@ module.exports = function(sequelize, DataTypes) {
             }
         });
     };
-    
+
     return Member;
   };
