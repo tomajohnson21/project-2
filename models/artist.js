@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-    var Event = sequelize.define("Artist", {
+    
+    var Artist = sequelize.define("Artist", {
       artist_name: {
           type: DataTypes.STRING,
           allowNull: false
@@ -8,7 +9,6 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
-      members: DataTypes.ARRAY,
       soundcloud_link: DataTypes.STRING,
       bandcamp_link: DataTypes.STRING,
       yt_link: DataTypes.STRING,
@@ -16,6 +16,13 @@ module.exports = function(sequelize, DataTypes) {
       fb_link: DataTypes.STRING,
       insta_link: DataTypes.STRING
     });
+
+    Artist.associate = function(models) {
+
+        Artist.hasMany(models.Member, {
+            onDelete: "cascade"
+        });
+    };
+    
     return Artist;
-  };
-  
+};

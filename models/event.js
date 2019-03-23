@@ -6,5 +6,13 @@ module.exports = function(sequelize, DataTypes) {
     location: DataTypes.STRING,
     description: DataTypes.TEXT
   });
+
+  Event.associate =  function(models){
+
+    Event.hasMany(models.Artist, {
+      onDelete: "cascade"
+    });
+  };
+
   return Event;
 };
