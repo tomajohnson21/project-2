@@ -1,0 +1,75 @@
+<div id="fb-root"></div>
+
+<!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid mb-0 pt-0" style="background: transparent">
+        <!-- Navigation Options (Home, Contact, Portfolio, Resume) -->
+        <ul class="nav mb-0 mt-0">
+                <li class="nav-item">
+                  <a class="nav-link active" href="/views/index.handlebars">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/views/login.handlebars">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="portfolio.html">Something</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="resume.html" tabindex="-1">Something</a>
+                </li>
+              </ul>
+
+        <div class="container p-3 mt-0" style="color: white">
+          <h1 class="display-4 text-center">Gig</h1>
+          <p class="lead text-center">This whole section will have some awesome font.</p>
+          <p class="text-center">- Tyrone Biggums</p>
+        </div>
+    </div>
+
+<div class="container justify-content-center p-3" style="border: solid white 2px;">
+    <div class="row mb-0">
+        <div class="col-12 text-center" style="font-size: 40px">Login</div>
+    </div>
+    <form>
+    <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" placeholder="Password">
+  </div>
+    </form>
+    <div class="row mb-0">
+        <a href="#" class="col-12 text-center" style="font-size: 24px; color: white">Or Sign Up</a>
+    </div>
+    <div class="fb-login-button col-12" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
+</div>
+
+
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=322541875283193&autoLogAppEvents=1"></script>
+<script>
+
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
