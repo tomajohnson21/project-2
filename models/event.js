@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var musEvent = sequelize.define("musEvent", {
+  var Event = sequelize.define("Event", {
     title: DataTypes.STRING,
     genre: DataTypes.STRING,
     //date: DataTypes.SRING,
@@ -15,6 +15,6 @@ module.exports = function(sequelize, DataTypes) {
   //   });
   // };
 
-  return musEvent;
+  return Event;
 
 };
