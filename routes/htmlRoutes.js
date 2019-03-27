@@ -4,7 +4,7 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
 
-    db.musEvent.findAll({}).then(function(results) {
+    db.Event.findAll({}).then(function(results) {
       res.render("index", {
         msg: "You can create an event here!",
         events: results
