@@ -68,6 +68,17 @@ var validateForm = function(){
 
     if(title_valid && location_valid && date_valid && genre_valid && description_valid && openings_valid){
         console.log("All good!")
+
+        var event_data = {
+            title: title,
+            location: location,
+            date: date,
+            genre: genre,
+            description: description,
+            total_slots: openings
+        }
+
+        postEvent(event_data)
     } else {
         console.log("Somethings wrong:");
         console.log("Title: " + title_valid);
@@ -77,6 +88,16 @@ var validateForm = function(){
         console.log("Description: " + description_valid);
         console.log("Openings: " + openings_valid)
     }
+}
+
+var postEvent = function(new_event) { 
+    $.ajax({
+        method: "POST",
+        url: "/api/events",
+        data: new_event
+    }).then(function(response){
+        console.log(response)    
+    })
 }
 
 $("#event-submit").on("click", function(){
