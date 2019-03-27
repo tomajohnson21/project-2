@@ -3,21 +3,20 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-
-
-    db.Event.findAll({}).then(function(dbEvents) {
+    db.Event.findAll({}).then(function(results) {
       res.render("index", {
         msg: "You can create an event here!",
-        Events: dbEvents
+        events: results
       });
     });
   });
 
-  // Load event page and pass in an eveny by id
+  // Load event page and pass in an event by id
   app.get("/event/:id", function(req, res) {
-    db.Event.findOne({ where: { id: req.params.id } }).then(function(dbEvent) {
+
+    db.Event.findOne({where: {id: req.params.id}}).then(function(results) {
       res.render("event", {
-        Event: dbEvent
+        event: results
       });
     });
   });
@@ -25,12 +24,19 @@ module.exports = function(app) {
   app.get("/artist/:id", function(req, res) {
     db.Artist.findOne({where: {id: req.params.id}}).then(function(results){
       res.render("artist", {
-       data: results
+       artist: results
       })
     })
   })
 
+  app.get("/new_event", function(req, res) {
+      res.render("event_form");
+  });
 
+  app.get("/new_artist", function(req, res) {
+    res.render("artist_form")
+  });
+ 
   app.get("/login", function(req, res){
     res.render("login")
   })
