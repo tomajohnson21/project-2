@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
-    "database": "exampledb",
+    "password": "Sandr@0730",
+    "database": "music_events_db",
     "host": "localhost",
     "dialect": "mysql"
   },

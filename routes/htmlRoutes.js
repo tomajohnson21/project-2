@@ -3,19 +3,21 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Event.findAll({}).then(function(results) {
+
+    db.musEvent.findAll({}).then(function(dbmusEvents) {
       res.render("index", {
-        msg: "Welcome!",
-        data: results
+        msg: "You can create an event here!",
+        musEvents: dbmusEvents
       });
     });
   });
 
   // Load example page and pass in an example by id
   app.get("/event/:id", function(req, res) {
-    db.Event.findOne({where: {id: req.params.id}}).then(function(results) {
+
+    db.musEvent.findOne({ where: { id: req.params.id } }).then(function(dbmusEvent) {
       res.render("event", {
-        data: results
+        musEvent: dbmusEvent
       });
     });
   });
