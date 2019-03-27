@@ -4,20 +4,20 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
 
-    db.Event.findAll({}).then(function(dbmusEvents) {
+
+    db.Event.findAll({}).then(function(dbEvents) {
       res.render("index", {
         msg: "You can create an event here!",
-        musEvents: dbmusEvents
+        Events: dbEvents
       });
     });
   });
 
-  // Load example page and pass in an example by id
+  // Load event page and pass in an eveny by id
   app.get("/event/:id", function(req, res) {
-
-    db.Event.findOne({ where: { id: req.params.id } }).then(function(dbmusEvent) {
+    db.Event.findOne({ where: { id: req.params.id } }).then(function(dbEvent) {
       res.render("event", {
-        musEvent: dbmusEvent
+        Event: dbEvent
       });
     });
   });
@@ -29,6 +29,7 @@ module.exports = function(app) {
       })
     })
   })
+
 
   app.get("/login", function(req, res){
     res.render("login")
