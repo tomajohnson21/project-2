@@ -73,7 +73,7 @@ var handleFormSubmit = function(event) {
     description: $eventDescription.val().trim()
   };
 
-  if (!(musEvent.title && musEvent.description && musEvent.location && musEvent.genre)) {
+  if (!(Event.title && Event.description && Event.location && Event.genre)) {
     alert("Please fill out all fields");
     return;
   }
