@@ -1,7 +1,7 @@
 var validateForm = function(){
 
     //Variables for all form fields
-    var name = $("#event-name").val().trim();
+    var title = $("#event-title").val().trim();
     var location = $("#event-location").val().trim();
     var date = $("#event-date").val().trim();
     var genre = $("#event-genre").val().trim();
@@ -9,26 +9,26 @@ var validateForm = function(){
     var openings = $("#event-openings").val().trim();
 
     //Variables for validation indicators
-    var name_indicator = $("#name-invalid");
+    var title_indicator = $("#title-invalid");
     var location_indicator = $("#location-invalid");
     var date_indicator = $("#date-invalid");
     var genre_indicator = $("#genre-invalid");
-    var description_indicator = $("#about-invalid");
+    var description_indicator = $("#description-invalid");
     var openings_indicator = $("#openings-invalid");
 
     //Boolean variables for determining if the form is valid
-    var name_valid = false;
+    var title_valid = false;
     var location_valid = false;
     var date_valid = false;
     var genre_valid = false;
     var description_valid = false;
     var openings_valid = false;
 
-    if(!name){
-        name_indicator.show();
+    if(!title){
+        title_indicator.show();
     } else {
-        name_indicator.hide();
-        name_valid = true;
+        title_indicator.hide();
+        title_valid = true;
     }
 
     if(!location){
@@ -66,11 +66,11 @@ var validateForm = function(){
         openings_valid = true;
     }
 
-    if(name_valid && location_valid && date_valid && genre_valid && description_valid && openings_valid){
+    if(title_valid && location_valid && date_valid && genre_valid && description_valid && openings_valid){
         console.log("All good!")
     } else {
         console.log("Somethings wrong:");
-        console.log("Name: " + name_valid);
+        console.log("Title: " + title_valid);
         console.log("Location: " + location_valid);
         console.log("Date: " + date_valid)
         console.log("Genre: " + genre_valid);
@@ -85,7 +85,7 @@ $("#event-submit").on("click", function(){
     validateForm();
 });
 
-$("#name-invalid").hide();
+$("#title-invalid").hide();
 $("#location-invalid").hide();
 $("#date-invalid").hide();
 $("#genre-invalid").hide();

@@ -4,7 +4,7 @@
         <div class="form-group">
         <label for="event-title">Event Title</label>
         <input type="text" id="event-title" class="form-control" aria-describedby="event-title" placeholder="Enter Event Title">
-        <p class="invalid-indicator" id="name-invalid">Please enter a name</p>
+        <p class="invalid-indicator" id="title-invalid">Please enter a name</p>
         </div>
 
         <div class="form-group">
@@ -33,7 +33,7 @@
 
         <div class="form-group">
         <label for="event-openings">Number of Openings for Artists</label>
-        <input type="number" id="event-openings" class="form-control" aria-describedby="event-openings" placeholder="5">
+        <input type="number" min="0" id="event-openings" class="form-control" aria-describedby="event-openings" placeholder="5">
         <p class="invalid-indicator" id="openings-invalid">Please enter a valid number of openings</p>
         </div>
         
@@ -42,4 +42,4 @@
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<script src="/js/event_form.js"></script>
