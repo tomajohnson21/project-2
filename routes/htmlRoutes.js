@@ -3,7 +3,6 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-
     db.Event.findAll({}).then(function(results) {
       res.render("index", {
         msg: "You can create an event here!",
@@ -37,7 +36,7 @@ module.exports = function(app) {
   app.get("/new_artist", function(req, res) {
     res.render("artist_form")
   });
-  
+ 
   app.get("/login", function(req, res){
     res.render("login")
   })

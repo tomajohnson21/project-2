@@ -32,7 +32,7 @@ var API = {
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
+// refreshEvents gets new events from the db and repopulates the list
 var refreshEvents = function() {
   API.getEvents().then(function(data) {
     var $event = data.map(function(event) {
@@ -61,12 +61,12 @@ var refreshEvents = function() {
   });
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
+// handleFormSubmit is called whenever we submit a new event
+// Save the new event to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var musEvent = {
+  var Event = {
     title: $eventTitle.val().trim(),
     location: $eventLocation.val().trim(),
     genre: $eventGenre.val().trim(),
@@ -78,7 +78,7 @@ var handleFormSubmit = function(event) {
     return;
   }
 
-  API.saveEvent(musEvent).then(function() {
+  API.saveEvent(Event).then(function() {
     refreshEvents();
   });
 
@@ -88,8 +88,8 @@ var handleFormSubmit = function(event) {
   $eventDescription.val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
+// handleDeleteBtnClick is called when an event's delete button is clicked
+// Remove the event from the db and refresh the list
 var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
     .parent()

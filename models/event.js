@@ -29,5 +29,15 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
+
+
+  // Event.associate =  function(models){
+
+  //   Event.hasMany(models.Artist, {
+  //     onDelete: "cascade"
+  //   });
+  // };
+
   return Event;
+
 };
