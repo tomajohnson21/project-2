@@ -5,21 +5,21 @@ module.exports = function(app) {
   // API calls for events 
   // Get all events
   app.get("/api/events", function(req, res) {
-    db.Event.findAll({}).then(function(results) {
+    db.musEvent.findAll({}).then(function(results) {
       res.json(results);
     });
   });
 
   // Create a new event
   app.post("/api/events", function(req, res) {
-    db.Event.create(req.body).then(function(results) {
+    db.musEvent.create(req.body).then(function(results) {
       res.json(results);
     });
   });
 
   // Delete an event by id
   app.delete("/api/events/:id", function(req, res) {
-    db.Event.destroy({ where: { id: req.params.id } }).then(function(results) {
+    db.musEvent.destroy({ where: { id: req.params.id } }).then(function(results) {
       res.json(results);
     });
   });

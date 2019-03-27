@@ -1,18 +1,18 @@
 module.exports = function(sequelize, DataTypes) {
-  var Event = sequelize.define("Event", {
+  var musEvent = sequelize.define("musEvent", {
     title: DataTypes.STRING,
     genre: DataTypes.STRING,
-    date: DataTypes.DATE,
+    // date: DataTypes.DATE,
     location: DataTypes.STRING,
     description: DataTypes.TEXT
   });
 
-  Event.associate =  function(models){
+  // Event.associate =  function(models){
 
-    Event.hasMany(models.Artist, {
-      onDelete: "cascade"
-    });
-  };
+  //   Event.hasMany(models.Artist, {
+  //     onDelete: "cascade"
+  //   });
+  // };
 
-  return Event;
+  return musEvent;
 };

@@ -3,19 +3,19 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.musEvent.findAll({}).then(function(dbmusEvents) {
       res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
+        msg: "You can create an event here!",
+        musEvents: dbmusEvents
       });
     });
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
+  app.get("/event/:id", function(req, res) {
+    db.musEvent.findOne({ where: { id: req.params.id } }).then(function(dbmusEvent) {
+      res.render("event", {
+        musEvent: dbmusEvent
       });
     });
   });
