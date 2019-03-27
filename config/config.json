@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Sandr@0730",
+    "password": "Phyllis21",
     "database": "music_events_db",
     "host": "localhost",
     "dialect": "mysql"
