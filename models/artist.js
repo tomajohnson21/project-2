@@ -9,6 +9,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
+      about: DataTypes.TEXT,
       soundcloud_link: DataTypes.STRING,
       bandcamp_link: DataTypes.STRING,
       yt_link: DataTypes.STRING,
@@ -17,12 +18,5 @@ module.exports = function(sequelize, DataTypes) {
       insta_link: DataTypes.STRING
     });
 
-    Artist.associate = function(models) {
-
-        Artist.hasMany(models.Member, {
-            onDelete: "cascade"
-        });
-    };
-    
     return Artist;
 };

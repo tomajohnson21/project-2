@@ -2,10 +2,11 @@ module.exports = function(sequelize, DataTypes) {
   var musEvent = sequelize.define("musEvent", {
     title: DataTypes.STRING,
     genre: DataTypes.STRING,
-    // date: DataTypes.DATE,
+    //date: DataTypes.SRING,
     location: DataTypes.STRING,
     description: DataTypes.TEXT
   });
+
 
   // Event.associate =  function(models){
 
@@ -15,4 +16,5 @@ module.exports = function(sequelize, DataTypes) {
   // };
 
   return musEvent;
+
 };
