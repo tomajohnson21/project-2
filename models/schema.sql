@@ -1,2 +1,5 @@
-DROP DATABASE IF EXISTS music_events_db;
-CREATE DATABASE music_events_db;
+DROP DATABASE IF EXISTS gigdb;
+CREATE DATABASE gigdb;
+
+DROP DATABASE IF EXISTS gig_testdb;
+CREATE DATABASE gig_testdb;

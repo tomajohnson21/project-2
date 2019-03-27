@@ -1,15 +1,15 @@
 {
   "development": {
     "username": "root",
-    "password": "Sandr@0730",
-    "database": "music_events_db",
+    "password": "password",
+    "database": "gigdb",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "password",
-    "database": "testdb",
+    "database": "gig_testdb",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false

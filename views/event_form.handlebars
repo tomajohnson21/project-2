@@ -1,18 +1,39 @@
-<form class="clearfix mb-4" action="POST">
+<div class="container">
+    <form class="clearfix mb-4" action="POST">
           
-    <div class="form-group">
-    
-    <label for="example-text">Example Text</label>
-    
-    <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-    </div>
-    
-    <div class="form-group">
-    
-    <label for="example-description">Example Description</label>
-    
-    <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-    </div>
-    
-    <button id="submit" class="btn btn-primary float-right">Submit</button>
-</form>
+        <div class="form-group">
+        <label for="event-title">Event Title</label>
+        <input type="text" id="event-title" class="form-control" aria-describedby="event-title" placeholder="Enter Event Title">
+        </div>
+
+        <div class="form-group">
+        <label for="event-location">Event Location</label>
+        <input type="text" id="event-location" class="form-control" aria-describedby="event-location" placeholder="Provide a location where the event will be held">
+        </div>
+
+        <div class="form-group">
+        <label for="event-date">Event Date</label>
+        <input type="text" id="event-date" class="form-control" aria-describedby="event-date" placeholder="Provide the date of your event">
+        </div>
+
+        <div class="form-group">
+        <label for="event-genre">Event Genre</label>
+        <input type="text" id="event-genre" class="form-control" aria-describedby="event-genre" placeholder="Provide a genre of the music">
+        </div>
+
+        <div class="form-group">
+        <label for="event-description">Event Description</label>
+        <textarea class="form-control" id="event-description" aria-describedby="event-description" placeholder="Provide a brief description about your event"></textarea>
+        </div>
+
+        <div class="form-group">
+        <label for="event-openings">Number of Openings for Artists</label>
+        <input type="text" id="event-openings" class="form-control" aria-describedby="event-openings" placeholder="5">
+        </div>
+        
+        <button id="event-submit" class="btn btn-primary float-right">Submit</button>
+    </form>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>

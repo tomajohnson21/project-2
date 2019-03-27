@@ -4,10 +4,10 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
 
-    db.musEvent.findAll({}).then(function(dbmusEvents) {
+    db.musEvent.findAll({}).then(function(results) {
       res.render("index", {
         msg: "You can create an event here!",
-        musEvents: dbmusEvents
+        events: results
       });
     });
   });
@@ -15,9 +15,9 @@ module.exports = function(app) {
   // Load event page and pass in an event by id
   app.get("/event/:id", function(req, res) {
 
-    db.musEvent.findOne({ where: { id: req.params.id } }).then(function(dbmusEvent) {
+    db.Event.findOne({where: {id: req.params.id}}).then(function(results) {
       res.render("event", {
-        musEvent: dbmusEvent
+        event: results
       });
     });
   });
@@ -25,7 +25,7 @@ module.exports = function(app) {
   app.get("/artist/:id", function(req, res) {
     db.Artist.findOne({where: {id: req.params.id}}).then(function(results){
       res.render("artist", {
-       data: results
+       artist: results
       })
     })
   })
