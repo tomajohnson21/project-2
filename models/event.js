@@ -2,9 +2,9 @@ module.exports = function(sequelize, DataTypes) {
   var Event = sequelize.define("Event", {
     title: DataTypes.STRING,
     genre: DataTypes.STRING,
-    date: DataTypes.DATE,
+    date: DataTypes.STRING,
     total_slots: DataTypes.INTEGER,
-    open_slots: {
+    filled_slots: {
       type: DataTypes.INTEGER,
       defaultValue: 0
     },

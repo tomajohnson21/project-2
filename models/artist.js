@@ -9,6 +9,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
+      about: DataTypes.TEXT,
       soundcloud_link: DataTypes.STRING,
       bandcamp_link: DataTypes.STRING,
       yt_link: DataTypes.STRING,
