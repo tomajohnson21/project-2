@@ -1,3 +1,8 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body {
+  background-image: url(../images/4k-wallpaper-architecture-background-1308624.jpg);
+  color: white;
+}
