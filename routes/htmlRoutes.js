@@ -15,8 +15,6 @@ module.exports = function(app) {
 
   // Load event page and pass in an eveny by id
   app.get("/event/:id", function(req, res) {
-
-    
     db.Event.findOne({ where: { id: req.params.id } }).then(function(dbEvent) {
       res.render("event", {
         Event: dbEvent
