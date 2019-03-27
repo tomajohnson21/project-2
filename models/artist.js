@@ -2,9 +2,9 @@ module.exports = function(sequelize, DataTypes) {
     
     var Artist = sequelize.define("Artist", {
       artist_name: {
-          type: DataTypes.STRING,
-          allowNull: false
-        },
+        type: DataTypes.STRING,
+        allowNull: false
+      },
       genre: { 
         type: DataTypes.STRING,
         allowNull: false

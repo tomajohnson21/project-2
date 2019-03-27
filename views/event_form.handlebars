@@ -1,0 +1,45 @@
+<div class="container">
+    <form class="clearfix mb-4" action="POST">
+          
+        <div class="form-group">
+        <label for="event-title">Event Title</label>
+        <input type="text" id="event-title" class="form-control" aria-describedby="event-title" placeholder="Enter Event Title">
+        <p class="invalid-indicator" id="title-invalid">Please enter a name</p>
+        </div>
+
+        <div class="form-group">
+        <label for="event-location">Event Location</label>
+        <input type="text" id="event-location" class="form-control" aria-describedby="event-location" placeholder="Provide a location where the event will be held">
+        <p class="invalid-indicator" id="location-invalid">Please enter a location</p>
+        </div>
+
+        <div class="form-group">
+        <label for="event-date">Event Date</label>
+        <input type="text" id="event-date" class="form-control" aria-describedby="event-date" placeholder="Provide the date of your event">
+        <p class="invalid-indicator" id="date-invalid">Please enter a valid date</p>
+        </div>
+
+        <div class="form-group">
+        <label for="event-genre">Event Genre</label>
+        <input type="text" id="event-genre" class="form-control" aria-describedby="event-genre" placeholder="Provide a genre of the music">
+        <p class="invalid-indicator" id="genre-invalid">Please enter a genre</p>
+        </div>
+
+        <div class="form-group">
+        <label for="event-description">Event Description</label>
+        <textarea class="form-control" id="event-description" aria-describedby="event-description" placeholder="Provide a brief description about your event"></textarea>
+        <p class="invalid-indicator" id="description-invalid">Please enter a description</p>
+        </div>
+
+        <div class="form-group">
+        <label for="event-openings">Number of Openings for Artists</label>
+        <input type="number" min="0" id="event-openings" class="form-control" aria-describedby="event-openings" placeholder="5">
+        <p class="invalid-indicator" id="openings-invalid">Please enter a valid number of openings</p>
+        </div>
+        
+        <button id="event-submit" class="btn btn-primary float-right">Submit</button>
+    </form>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/event_form.js"></script>

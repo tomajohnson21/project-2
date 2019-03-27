@@ -6,3 +6,8 @@ body {
   background-image: url(../images/4k-wallpaper-architecture-background-1308624.jpg);
   color: white;
 }
+
+.invalid-indicator{
+  font-size: 0.75em;
+  color: red;
+}
