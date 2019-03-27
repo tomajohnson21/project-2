@@ -18,5 +18,5 @@ module.exports = function(sequelize, DataTypes) {
         });
     };
 
-    return Member;
-  };
+  return Member;
+};

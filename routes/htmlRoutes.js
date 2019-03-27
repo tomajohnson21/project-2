@@ -11,7 +11,7 @@ module.exports = function(app) {
     });
   });
 
-  // Load example page and pass in an example by id
+  // Load event page and pass in an event by id
   app.get("/event/:id", function(req, res) {
     db.Event.findOne({where: {id: req.params.id}}).then(function(results) {
       res.render("event", {
@@ -27,6 +27,14 @@ module.exports = function(app) {
       })
     })
   })
+
+  app.get("/new_event", function(req, res) {
+      res.render("event_form");
+  });
+
+  app.get("/new_artist", function(req, res) {
+    res.render("artist_form")
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
