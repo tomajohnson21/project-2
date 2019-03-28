@@ -6,7 +6,8 @@ module.exports = function(app) {
     db.Event.findAll({}).then(function(results) {
       res.render("index", {
         msg: "You can create an event here!",
-        events: results
+        events: results,
+        style: "create_event.css"
       });
     });
   });
@@ -38,7 +39,9 @@ module.exports = function(app) {
   });
  
   app.get("/login", function(req, res){
-    res.render("login")
+    res.render("login", {
+      style: "styles.css"
+    })
   })
 
   // Render 404 page for any unmatched routes
