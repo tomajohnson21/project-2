@@ -17,7 +17,7 @@ module.exports = function(app) {
 
     db.Event.findOne({where: {id: req.params.id}}).then(function(event_results) {
       
-      db.Artist.findAll({where: {foreign_key: req.parmas.id}}).then(function(artist_results){
+      db.Artist.findAll({where: {EventId: req.params.id}}).then(function(artist_results){
         
         res.render("event", {data: {event_data: event_results, artist_data: artist_results}})
       });
@@ -36,8 +36,8 @@ module.exports = function(app) {
       res.render("event_form");
   });
 
-  app.get("/new_artist", function(req, res) {
-    res.render("artist_form")
+  app.get("/event/:id/new_artist", function(req, res) {
+    res.render("artist_form", {event_id: req.params.id})
   });
  
   app.get("/login", function(req, res){
