@@ -11,7 +11,7 @@
           {{#each events}}
 
           <li data-id="{{this.id}}" class="list-group-item">
-            
+
             {{!-- Links to the "/event/:id" route for the specific event referenced in the database --}}
             <a href="event/{{this.id}}">{{this.title}}</a>
             <p>Genre: {{this.genre}}</p>
