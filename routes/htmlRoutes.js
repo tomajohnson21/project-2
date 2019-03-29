@@ -7,7 +7,6 @@ module.exports = function(app) {
       res.render("index", {
         msg: "You can create an event here!",
         events: results,
-        style: "create_event.css"
       });
     });
   });
@@ -31,7 +30,9 @@ module.exports = function(app) {
   })
 
   app.get("/new_event", function(req, res) {
-      res.render("event_form");
+      res.render("event_form", {
+        style: "create_event.css"
+      });
   });
 
   app.get("/new_artist", function(req, res) {

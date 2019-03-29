@@ -155,27 +155,26 @@
 
 
 /* HEADER */
-/* =============== */
+/* ========================================================== */
 
 form {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Lato", sans-serif;
     border: solid;
     border-width: thin;
     color: #414141;
+    margin-right: 300px;
     
 }
 label {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .form-group {
-    max-width: 600px;
+    max-width: 650px;
     margin-left: 30px;
-    margin-top: 30px;
 }
 
 .form-body {
-    border: solid;
     background-color:white;
 }
 
