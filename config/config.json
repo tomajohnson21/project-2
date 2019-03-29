@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "password",
-    "database": "gigdb",
-    "host": "localhost",
+    "username": "y98yke7oa8t19ps9",
+    "password": "cv32qikujoje41pv",
+    "database": "s6ct2nlbmvc7r0t9",
+    "host": "otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
