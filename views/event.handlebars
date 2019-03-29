@@ -4,24 +4,36 @@
       <div class="card mt-4">
         <div class="card-body">
 
-          <h5 class="card-title">Events</h5>
+          <h5 class="card-title">{{data.event_data.title}}</h5>
           <p>
-            <strong>ID</strong>: {{event.id}}
+            <strong>ID</strong>: {{data.event_data.id}}
           </p>
           <p>
-            <strong>Title</strong>: {{event.title}}
+            <strong>Location</strong>: {{data.event_data.location}}
           </p>
           <p>
-            <strong>Location</strong>: {{event.location}}
+            <strong>Genre</strong>: {{data.event_data.genre}}
           </p>
           <p>
-            <strong>Genre</strong>: {{event.genre}}
-          </p>
-          <p>
-            <strong>Description:</strong> {{event.description}}
+            <strong>Description:</strong> {{data.event_data.description}}
           </p>
 
+          {{#each data.artist_data}}
+            <div>
+              <p>
+                <a href="/artist/{{this.id}}">{{this.artist_name}}</a>
+              </p>
+            </div>
+          {{/each}}
+
+          <br>
+          <br>
+          <p>
+            <a href="/event/{{data.event_data.id}}/new_artist">+ Join Event</a>
+          </p>
+          <p>
             <a href="/">← Back To Home</a>
+          </p>
         </div>
       </div>
     </div>

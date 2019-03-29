@@ -2,6 +2,7 @@
 var validateForm = function(){
 
     //Variables for all form fields
+    var event_id = $("#artist-form").data("event-id");
     var name = $("#artist-name").val().trim();
     var genre = $("#artist-genre").val().trim();
     var about = $("#artist-description").val().trim();
@@ -56,7 +57,8 @@ var validateForm = function(){
             yt_link: youtube,
             twitter_link: twitter,
             fb_link: facebook,
-            insta_link: instagram
+            insta_link: instagram,
+            EventId: event_id
         }
 
         postArtist(artist_data)

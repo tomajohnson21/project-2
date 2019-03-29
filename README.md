@@ -24,7 +24,12 @@ Version ***1.0.0***
 - [express-handlebars](https://www.npmjs.com/package/express-handlebars) 
 - [sequelize](https://www.npmjs.com/package/sequelize)
 - [mysql](https://www.mysql.com/) 
+- [passport](https://www.npmjs.com/package/passport)
 ---
+
+### API Information
+---
+- [Google Maps](https://developers.google.com/maps/documentation/)
 
 ### The Team 
 - __Thomas Johnson__: *Team lead* 

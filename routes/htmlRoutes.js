@@ -14,10 +14,12 @@ module.exports = function(app) {
   // Load event page and pass in an event by id
   app.get("/event/:id", function(req, res) {
 
-    db.Event.findOne({where: {id: req.params.id}}).then(function(results) {
-      res.render("event", {
-        event: results,
-        style: "event.css"
+
+    db.Event.findOne({where: {id: req.params.id}}).then(function(event_results) {
+      
+      db.Artist.findAll({where: {EventId: req.params.id}}).then(function(artist_results){
+        
+        res.render("event", {data: {event_data: event_results, artist_data: artist_results}})
       });
     });
   });
@@ -37,10 +39,9 @@ module.exports = function(app) {
       });
   });
 
-  app.get("/new_artist", function(req, res) {
-    res.render("artist_form", {
-      style: "new_artist.css"
-    })
+
+  app.get("/event/:id/new_artist", function(req, res) {
+    res.render("artist_form", {event_id: req.params.id})
   });
  
   app.get("/login", function(req, res){
