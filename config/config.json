@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Phyllis21",
+    "password": "password",
     "database": "gigdb",
     "host": "localhost",
     "dialect": "mysql"
