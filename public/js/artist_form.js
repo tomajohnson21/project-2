@@ -85,6 +85,7 @@ $("#artist-submit").on("click", function(){
 
     event.preventDefault();
     validateForm();
+    
 });
 
 $("#name-invalid").hide();

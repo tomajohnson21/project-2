@@ -30,7 +30,7 @@ module.exports = function(app) {
   app.get("/api/events/:id", function(req, res){
     db.Event.findOne({where: {id: req.params.id}}).then(function(event_results) {
       
-      db.Artist.findAll({where: {EventId: req.params.id}}).then(function(artist_results){
+      db.Artist.findAll({where: {eventid: req.params.id}}).then(function(artist_results){
         
         data = {event_data: event_results, artist_data: artist_results}
         
