@@ -99,6 +99,9 @@ var postEvent = function(new_event) {
         console.log(response)    
     })
 }
+function goBackHome(){
+    window.location.href = "/"
+}
 
 function clearForm() {
     $("#event-title").val("");
@@ -113,6 +116,7 @@ $("#event-submit").on("click", function(){
     event.preventDefault();
     validateForm();
     clearForm();
+    goBackHome();
     
 });
 
