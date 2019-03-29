@@ -4,12 +4,12 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.Event.findAll({}).then(function(results) {
-      res.render("index", {
+      res.render("index", { 
         msg: "You can create an event here!",
-        events: results,
+         events: results,
       });
     });
-  });
+  })
 
   // Load event page and pass in an event by id
   app.get("/event/:id", function(req, res) {
