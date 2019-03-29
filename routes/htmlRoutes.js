@@ -16,7 +16,8 @@ module.exports = function(app) {
 
     db.Event.findOne({where: {id: req.params.id}}).then(function(results) {
       res.render("event", {
-        event: results
+        event: results,
+        style: "event.css"
       });
     });
   });
@@ -24,7 +25,8 @@ module.exports = function(app) {
   app.get("/artist/:id", function(req, res) {
     db.Artist.findOne({where: {id: req.params.id}}).then(function(results){
       res.render("artist", {
-       artist: results
+       artist: results,
+       style: "artist.css"
       })
     })
   })
@@ -36,7 +38,9 @@ module.exports = function(app) {
   });
 
   app.get("/new_artist", function(req, res) {
-    res.render("artist_form")
+    res.render("artist_form", {
+      style: "new_artist.css"
+    })
   });
  
   app.get("/login", function(req, res){

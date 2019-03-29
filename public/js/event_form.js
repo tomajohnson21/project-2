@@ -100,10 +100,20 @@ var postEvent = function(new_event) {
     })
 }
 
+function clearForm() {
+    $("#event-title").val("");
+    $("#event-location").val("")
+    $("#event-date").val("");
+    $("#event-genre").val("");
+    $("#event-description").val("");
+}
+
 $("#event-submit").on("click", function(){
 
     event.preventDefault();
     validateForm();
+    clearForm();
+    
 });
 
 $("#title-invalid").hide();
