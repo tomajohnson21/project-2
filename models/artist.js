@@ -18,5 +18,14 @@ module.exports = function(sequelize, DataTypes) {
       insta_link: DataTypes.STRING
     });
 
+    Artist.associate = function(models) {
+      
+      Artist.belongsTo(models.Event, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+
     return Artist;
 };

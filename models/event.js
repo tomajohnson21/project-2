@@ -14,7 +14,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     total_slots: {
       type: DataTypes.INTEGER,
-      allowNull: false},
+      allowNull: false
+    },
     filled_slots: {
       type: DataTypes.INTEGER,
       defaultValue: 0
@@ -29,15 +30,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-
-
-  // Event.associate =  function(models){
-
-  //   Event.hasMany(models.Artist, {
-  //     onDelete: "cascade"
-  //   });
-  // };
-
   return Event;
-
 };

@@ -17,11 +17,26 @@ module.exports = function(app) {
     });
   });
 
+  //Update an event when an artist is added
+  app.put("/api/events", function(req, res){
+
+    db.Event.update(req.body, {where: {id: req.body.id}}).then(function(results){
+
+      res.json(results)
+    });
+  })  
+
   // Get a single event by id
   app.get("/api/events/:id", function(req, res){
-    db.Event.findOne({where: {id: req.params.id}}).then(function(results) {
-      res.json(results);
-    })
+    db.Event.findOne({where: {id: req.params.id}}).then(function(event_results) {
+      
+      db.Artist.findAll({where: {EventId: req.params.id}}).then(function(artist_results){
+        
+        data = {event_data: event_results, artist_data: artist_results}
+        
+        res.json(data)
+      });
+    });
   })
 
   // Delete an event by id
