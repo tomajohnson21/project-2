@@ -82,14 +82,15 @@ var postArtist = function(new_artist) {
 }
 
 function goBackHome(){
-    window.location.href = "/evemt/:id"
+    window.location.href = "/"
 }
+
 
 $("#artist-submit").on("click", function(){
 
     event.preventDefault();
     validateForm();
-    history.go(-1); 
+    goBackHome();
     
 });
 
