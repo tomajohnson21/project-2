@@ -46,6 +46,7 @@ Version ***1.0.0***
 ### API Information
 ---
 - [Google Maps](https://developers.google.com/maps/documentation/)
+---
 
 ### The Team 
 - __Thomas Johnson__: *Team lead* 
