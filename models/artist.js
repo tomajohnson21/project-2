@@ -22,8 +22,11 @@ module.exports = function(sequelize, DataTypes) {
       
       Artist.belongsTo(models.Event, {
         foreignKey: {
-          allowNull: false
-        }
+          allowNull: false,
+          
+        },
+          onUpdate: "CASCADE",
+          onDelete: "CASCADE"
       });
     };
 
