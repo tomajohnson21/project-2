@@ -97,6 +97,7 @@ var handleDeleteBtnClick = function() {
 
   API.deleteEvent(idToDelete).then(function() {
     refreshEvents();
+    location.reload();
   });
 };
 
