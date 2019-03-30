@@ -99,10 +99,21 @@ var postEvent = function(new_event) {
         console.log(response)    
     })
 }
+<<<<<<< HEAD
 function goBackHome(){
     window.location.replace("/");
     
 }
+=======
+
+function clearForm() {
+    $("#event-title").val("");
+    $("#event-location").val("")
+    $("#event-date").val("");
+    $("#event-genre").val("");
+    $("#event-description").val("");
+} 
+>>>>>>> 89c8e5edcf98c634b24c7807afd11a30a6df10eb
 
 $("#event-submit").on("click", function(){
 
