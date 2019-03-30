@@ -100,9 +100,8 @@ var postEvent = function(new_event) {
     })
 }
 function goBackHome(){
-    window.location.href = "/"
-    reload = true;
-    return reload;
+    window.location.replace("/");
+    
 }
 
 $("#event-submit").on("click", function(){
