@@ -101,21 +101,14 @@ var postEvent = function(new_event) {
 }
 function goBackHome(){
     window.location.href = "/"
-}
-
-function clearForm() {
-    $("#event-title").val("");
-    $("#event-location").val("")
-    $("#event-date").val("");
-    $("#event-genre").val("");
-    $("#event-description").val("");
+    reload = true;
+    return reload;
 }
 
 $("#event-submit").on("click", function(){
 
     event.preventDefault();
     validateForm();
-    clearForm();
     goBackHome();
     
 });

@@ -4,9 +4,9 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.Event.findAll({}).then(function(results) {
-      res.render("index", { 
-        msg: "You can create an event here!",
-         events: results,
+      res.render("index", {
+        msg: "Check out these awesome events near you!",
+        events: results,
       });
     });
   })
