@@ -6,6 +6,7 @@
         <h2>{{msg}}</h2>
         <h4>Upcoming Events:</h4>
 
+        <p>{{msg}}</p>
         <ul id="event-list" class="list-group">
 
           {{!-- For each event, add it to the list on the "/" route under Upcoming Events--}}
@@ -14,7 +15,7 @@
           <li data-id="{{this.id}}" class="list-group-item">
 
             {{!-- Links to the "/event/:id" route for the specific event referenced in the database --}}
-            <a href="event/{{this.id}}">{{this.title}}</a>
+            <a href="events/{{this.id}}">{{this.title}}</a>
             <p>Genre: {{this.genre}}</p>
             <p>Location: {{this.location}}</p>
             <p>Date: {{this.date}}</p>
@@ -27,5 +28,4 @@
   </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
