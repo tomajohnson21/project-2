@@ -5,7 +5,7 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Event.findAll({}).then(function(results) {
       res.render("index", {
-        msg: "You can create an event here!",
+        msg: "Check out these awesome events near you!",
         events: results,
       });
     });
