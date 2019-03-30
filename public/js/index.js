@@ -1,3 +1,5 @@
+
+
 // Get references to page elements
 var $eventTitle = $("#event-title");
 var $eventLocation = $("#event-location");
@@ -58,6 +60,7 @@ var refreshEvents = function() {
 
     $eventList.empty();
     $eventList.append($event);
+    location.reload();
   });
 };
 
@@ -97,7 +100,6 @@ var handleDeleteBtnClick = function() {
 
   API.deleteEvent(idToDelete).then(function() {
     refreshEvents();
-    location.reload();
   });
 };
 

@@ -101,6 +101,8 @@ var postEvent = function(new_event) {
 }
 function goBackHome(){
     window.location.href = "/"
+    reload = true;
+    return reload;
 }
 
 $("#event-submit").on("click", function(){

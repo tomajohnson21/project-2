@@ -82,7 +82,7 @@ var postArtist = function(new_artist) {
 }
 
 function goBackHome(){
-    window.location.href = "/evemt/:id"
+    window.location.href = "/event/:id"
 }
 
 $("#artist-submit").on("click", function(){
