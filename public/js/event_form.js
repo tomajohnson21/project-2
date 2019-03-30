@@ -106,7 +106,7 @@ function clearForm() {
     $("#event-date").val("");
     $("#event-genre").val("");
     $("#event-description").val("");
-}
+} 
 
 $("#event-submit").on("click", function(){
 
