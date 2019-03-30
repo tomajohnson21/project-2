@@ -12,7 +12,7 @@ module.exports = function(app) {
   })
 
   // Load event page and pass in an event by id
-  app.get("/event/:id", function(req, res) {
+  app.get("/events/:id", function(req, res) {
 
 
     db.Event.findOne({where: {id: req.params.id}}).then(function(event_results) {
@@ -24,7 +24,7 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/artist/:id", function(req, res) {
+  app.get("/artists/:id", function(req, res) {
     db.Artist.findOne({where: {id: req.params.id}}).then(function(results){
       res.render("artist", {
        artist: results,
@@ -40,7 +40,7 @@ module.exports = function(app) {
   });
 
 
-  app.get("/event/:id/new_artist", function(req, res) {
+  app.get("/events/:id/new_artist", function(req, res) {
     res.render("artist_form", {event_id: req.params.id})
   });
  
