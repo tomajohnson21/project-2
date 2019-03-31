@@ -1,9 +1,10 @@
 var db = require("../models");
+var moment = require("moment")
 
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Event.findAll({}).then(function(results) {
+    db.Event.findAll({where: {date: {$gte: moment().format("YYYY-MM-DD")}}}).then(function(results) {
       res.render("index", {
         msg: "Check out these awesome events near you!",
         events: results,

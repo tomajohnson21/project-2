@@ -40,6 +40,8 @@ var validateForm = function(){
 
     if(!date){
         date_indicator.show();
+    } else if(!validDate(date)){
+        date_indicator.show()
     } else {
         date_indicator.hide();
         date_valid = true;
@@ -67,7 +69,6 @@ var validateForm = function(){
     }
 
     if(title_valid && location_valid && date_valid && genre_valid && description_valid && openings_valid){
-        console.log("All good!")
 
         var event_data = {
             title: title,
@@ -79,15 +80,52 @@ var validateForm = function(){
         }
 
         postEvent(event_data)
+
+        return true;
     } else {
-        console.log("Somethings wrong:");
-        console.log("Title: " + title_valid);
-        console.log("Location: " + location_valid);
-        console.log("Date: " + date_valid)
-        console.log("Genre: " + genre_valid);
-        console.log("Description: " + description_valid);
-        console.log("Openings: " + openings_valid)
+
+        return false;
     }
+}
+
+var validDate = function(new_date) {
+
+    date_format = "YYYY-MM-DD";
+    
+    if(!moment(new_date, date_format, true).isValid()){
+        return false;
+    }
+
+    curr_date = new Date();
+
+    var year = new_date.substring(0, 4);
+
+    var curr_year = curr_date.getFullYear();
+
+    if(year < curr_year){
+        return false;
+    }
+
+    var month = new_date.substring(5, 7);
+
+    var curr_month = curr_date.getMonth();
+
+
+    if(month < curr_month){
+        return false;
+    }
+
+
+    var day = new_date.substring(8)
+
+    var curr_day = curr_date.getDate();
+
+    if(month === curr_month && day < curr_day){
+        return false
+    }
+
+    return true;
+
 }
 
 var postEvent = function(new_event) { 
@@ -99,6 +137,7 @@ var postEvent = function(new_event) {
         console.log(response)    
     })
 }
+
 function goBackHome(){
     window.location.replace("/");
     
@@ -107,8 +146,9 @@ function goBackHome(){
 $("#event-submit").on("click", function(){
 
     event.preventDefault();
-    validateForm();
-    goBackHome();
+    if(validateForm()){
+        goBackHome();
+    }
     
 });
 

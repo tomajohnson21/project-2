@@ -45,7 +45,6 @@ var validateForm = function(){
     }
 
     if(name_valid && genre_valid && about_valid){
-        console.log("All good!")
         
         var artist_data =  {
 
@@ -63,11 +62,10 @@ var validateForm = function(){
 
         postArtist(artist_data)
 
+        return true;
     } else {
-        console.log("\nSomethings wrong:");
-        console.log("Name: " + name_valid);
-        console.log("Genre: " + genre_valid);
-        console.log("About: " + about_valid);
+
+        return false;
     }
 }
 
@@ -89,8 +87,9 @@ function goBackHome(){
 $("#artist-submit").on("click", function(){
 
     event.preventDefault();
-    validateForm();
-    goBackHome();
+    if(validateForm()){
+        goBackHome();
+    }
     
 });
 
