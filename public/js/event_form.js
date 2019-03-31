@@ -101,8 +101,17 @@ var postEvent = function(new_event) {
 }
 
 function goBackHome(){
-   
+    window.location.replace("/");
+    
 }
+
+function clearForm() {
+    $("#event-title").val("");
+    $("#event-location").val("")
+    $("#event-date").val("");
+    $("#event-genre").val("");
+    $("#event-description").val("");
+} 
 
 $("#event-submit").on("click", function(){
 

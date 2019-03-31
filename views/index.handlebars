@@ -1,3 +1,4 @@
+<body onload="initialize()">
 <div id="home">
   <div class="container mt-5">    
     <div class="row">
@@ -25,5 +26,60 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <div id="map"></div>
+</div>
+        
 
 <script src="/js/index.js"></script>
+<script>
+    
+    // var db = require("../models");
+    
+
+    $("#map").hide();
+
+        var geocoder;
+        var map;
+
+            function initialize() {
+            
+            geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng(-34.397, 150.644);
+        var mapOptions = {
+            zoom: 12,
+            center: latlng
+        }
+            map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        }
+
+function codeAddress() {
+    $("#map").show();
+    var address = document.getElementById('address').value;
+    geocoder.geocode( { 'address': address}, function(results, status) {
+
+      if (status == 'OK') {
+
+        console.log(results)
+
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbhUtgWsIXNS2XoeUSft7JtluN8WVhNOI&callback=initMap"
+        async defer>
+        
+        module.exports = index;
+        </script>
+        
+
+
+</body>
