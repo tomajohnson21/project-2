@@ -42,16 +42,16 @@
         var geocoder;
         var map;
 
-            function initialize() {
-            
-            geocoder = new google.maps.Geocoder();
-        var latlng = new google.maps.LatLng(-34.397, 150.644);
-        var mapOptions = {
+function initialize() {
+    
+    geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var mapOptions = {
             zoom: 12,
             center: latlng
         }
-            map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        }
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+}
 
 function codeAddress() {
     $("#map").show();
@@ -74,8 +74,7 @@ function codeAddress() {
     });
   }
         </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbhUtgWsIXNS2XoeUSft7JtluN8WVhNOI&callback=initMap"
-        async defer>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbhUtgWsIXNS2XoeUSft7JtluN8WVhNOI&callback=initMap" async defer>
         
         module.exports = index;
         </script>

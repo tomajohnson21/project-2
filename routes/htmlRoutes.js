@@ -6,6 +6,7 @@ module.exports = function(app) {
     db.Event.findAll({}).then(function(results) {
       res.render("index", {
         events: results,
+        style: "event.css"
       });
     });
   })
@@ -18,7 +19,13 @@ module.exports = function(app) {
       
       db.Artist.findAll({where: {EventId: req.params.id}}).then(function(artist_results){
         
-        res.render("event", {data: {event_data: event_results, artist_data: artist_results}})
+        res.render("event", {
+          data: {
+            event_data: event_results, 
+            artist_data: artist_results
+          },
+          style: "event.css"
+        })
       });
     });
   });
@@ -40,7 +47,10 @@ module.exports = function(app) {
 
 
   app.get("/events/:id/new_artist", function(req, res) {
-    res.render("artist_form", {event_id: req.params.id})
+    res.render("artist_form", {
+      event_id: req.params.id,
+      style: "event.css"      
+    })
   });
  
   app.get("/login", function(req, res){
