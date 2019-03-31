@@ -99,17 +99,17 @@ var postEvent = function(new_event) {
         console.log(response)    
     })
 }
+
 function goBackHome(){
-    window.location.href = "/"
-    reload = true;
-    return reload;
+   
 }
 
 $("#event-submit").on("click", function(){
 
     event.preventDefault();
     validateForm();
-    goBackHome();
+    // goBackHome();
+    window.location.replace("/")
     
 });
 
