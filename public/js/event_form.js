@@ -139,7 +139,7 @@ var postEvent = function(new_event) {
 }
 
 function goBackHome(){
-    window.location.replace("/");
+    window.location.assign("/");
     
 }
 
