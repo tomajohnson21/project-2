@@ -14,10 +14,13 @@
           <li data-id="{{this.id}}" class="list-group-item mb-5">
 
             {{!-- Links to the "/event/:id" route for the specific event referenced in the database --}}
-            <a href="events/{{this.id}}" id="band-name">{{this.title}}</a>
+
+            <a href="events/{{this.id}}" style="color: Orange; font-size: 30px">{{this.title}}</a>
+            <hr>
             <p>Genre: {{this.genre}}</p>
             <p>Location: {{this.location}}</p>
             <p>Date: {{this.date}}</p>
+            <hr>
             <button class="btn btn-danger float-right delete text-center" style="max-width: 50px; background-color: orange; Border: none">ｘ</button>
           </li>
           {{/each}}
