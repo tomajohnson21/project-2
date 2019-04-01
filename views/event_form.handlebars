@@ -1,43 +1,74 @@
-<div class="container form-body mt-4 mx-auto">
-    <form class="clearfix mb-4 mx-auto p-3" action="POST">
-          
-        <div class="form-group">
+<div class="container form-body my-3 p-5 mx-auto">
+    <form class="clearfix mb-4 mx-auto p-5" action="POST">
+
+        {{!-- New Row --}}
+
+    <div class="row">
+        <div class="form-group col-lg-5 col-sm-12 col-md-6">
         <label for="event-title" id="text">Event Title</label>
-        <input type="text" id="event-title" class="form-control" aria-describedby="event-title" placeholder="Enter Event Title">
+        <input type="text" id="event-title" class="form-control" aria-describedby="event-title" placeholder="Title">
         <p class="invalid-indicator" id="title-invalid">Please enter a name</p>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-lg-7 col-sm-12 col-md-6">
         <label for="event-location">Event Location</label>
-        <input type="text" id="event-location" class="form-control" aria-describedby="event-location" placeholder="Provide a location where the event will be held">
+        <input type="text" id="event-location" class="form-control" aria-describedby="event-location" placeholder="Address">
         <p class="invalid-indicator" id="location-invalid">Please enter a location</p>
         </div>
 
-        <div class="form-group">
+    </div>  
+
+        {{!-- New Row --}}
+
+    <div class="row">
+        <div class="col-lg-1 col-md-0 col-sm-0"></div>
+
+        <div class="form-group col-lg-5 col-sm-6 col-md-6">
         <label for="event-date">Event Date</label>
-        <input type="text" id="event-date" class="form-control" aria-describedby="event-date" placeholder="Provide the date of your event">
+        <input type="text" id="event-date" class="form-control" aria-describedby="event-date" placeholder="MM/DD/YYYY">
         <p class="invalid-indicator" id="date-invalid">Please enter a valid date</p>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-lg-5 col-sm-6 col-md-6">
         <label for="event-genre">Event Genre</label>
-        <input type="text" id="event-genre" class="form-control" aria-describedby="event-genre" placeholder="Provide a genre of the music">
+        <input type="text" id="event-genre" class="form-control" aria-describedby="event-genre" placeholder="Genre">
         <p class="invalid-indicator" id="genre-invalid">Please enter a genre</p>
         </div>
 
-        <div class="form-group">
+        <div class="col-lg-1 col-md-0 col-sm-0"></div>
+    </div>
+
+        {{!-- New Row --}}
+    <div class="row">
+            <div class="col-lg-2 col-md-0 col-sm-0"></div>
+        <div class="form-group col-lg-8 col-md-12 col-sm-12">
         <label for="event-description">Event Description</label>
-        <textarea class="form-control" id="event-description" aria-describedby="event-description" placeholder="Provide a brief description about your event"></textarea>
+        <textarea class="form-control" id="event-description" aria-describedby="event-description" placeholder="Description"></textarea>
         <p class="invalid-indicator" id="description-invalid">Please enter a description</p>
         </div>
+            <div class="col-lg-2 col-md-0 col-sm-0"></div>
+    </div>
 
-        <div class="form-group">
-        <label for="event-openings">Number of Openings for Artists</label>
-        <input type="number" min="0" id="event-openings" class="form-control" aria-describedby="event-openings" placeholder="5">
+        {{!-- New Row --}}
+
+    <div class="row">
+            <div class="col-lg-4 col-md-3 col-sm-0"></div>
+        <div class="form-group col-lg-3 col-md-6 col-sm-12">
+        <label for="event-openings">Artist Slots</label>
+        <input type="number" min="0" id="event-openings" class="form-control" aria-describedby="event-openings" placeholder="Number">
         <p class="invalid-indicator" id="openings-invalid">Please enter a valid number of openings</p>
         </div>
-        
-        <buttona id="event-submit" class="btn btn-primary float-right">Create Event</button>
+            <div class="col-lg-4 col-md-3 col-sm-0"></div>
+    </div>
+    
+    {{!-- New Row --}}
+
+    <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-6"></div>
+        <div class=" col-lg-3 col-md-4 col-sm-6">
+        <button id="event-submit" class="btn btn-primary">Create Event</button>
+        </div>
+    </div>    
     </form>
 </div>
 
