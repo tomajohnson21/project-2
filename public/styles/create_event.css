@@ -162,7 +162,6 @@ form {
     border: none;
     border-width: thin;
     color: #414141;
-    /* margin-right: 300px; */
     
 }
 label {
@@ -171,7 +170,6 @@ label {
 
 .form-group {
     max-width: 650px;
-    /* margin-left: 30px; */
 }
 
 .form-body {
