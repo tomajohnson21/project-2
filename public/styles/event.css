@@ -1,5 +1,19 @@
 .list-group-item {
     line-height: 2.5;
+    margin-right: 100px;
+  }
+  #band-name{
+    font-family: "Lato", sans-serif;
+    font-size: 2em;
+  }
+  #upcoming-events {
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    border-bottom: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #FF9E19;
+    margin-right: 100px;
+    margin-bottom:20px;
   }
   
   
@@ -153,3 +167,16 @@
   margin: 0;
   padding: 0;
   }
+
+
+/* Modal CSS */
+  /* ========================== */
+#modal-nav-link {
+  font-family: "Lato", sans-serif;
+  color: #414141;
+}
+
+#modal-nav-link:hover{
+  color:#FF9E19;
+}
+  
