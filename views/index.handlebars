@@ -1,23 +1,24 @@
+<body onload="initialize()">
 <div id="home">
-  <div class="container mt-5">    
+  <div class="container mt-5 mb-5">    
     <div class="row">
       <div class="col-8 offset-2">
         {{!-- The start of where the events will be added on the landing page --}}
-        <h2>{{msg}}</h2>
+        <h4>Upcoming Events:</h4>
 
         <ul id="event-list" class="list-group">
 
           {{!-- For each event, add it to the list on the "/" route under Upcoming Events--}}
           {{#each events}}
 
-          <li data-id="{{this.id}}" class="list-group-item">
+          <li data-id="{{this.id}}" class="list-group-item mb-5">
 
             {{!-- Links to the "/event/:id" route for the specific event referenced in the database --}}
             <a href="events/{{this.id}}">{{this.title}}</a>
             <p>Genre: {{this.genre}}</p>
             <p>Location: {{this.location}}</p>
             <p>Date: {{this.date}}</p>
-            <button class="btn btn-danger float-right delete text-center" style="max-width: 50px">ｘ</button>
+            <button class="btn btn-danger float-right delete text-center" style="max-width: 50px; background-color: orange; Border: none">ｘ</button>
           </li>
           {{/each}}
         </ul>
@@ -25,5 +26,59 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <div id="map"></div>
+</div>
+        
 
 <script src="/js/index.js"></script>
+<script>
+    
+    // var db = require("../models");
+    
+
+    $("#map").hide();
+
+        var geocoder;
+        var map;
+
+function initialize() {
+    
+    geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var mapOptions = {
+            zoom: 12,
+            center: latlng
+        }
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+}
+
+function codeAddress() {
+    $("#map").show();
+    var address = document.getElementById('address').value;
+    geocoder.geocode( { 'address': address}, function(results, status) {
+
+      if (status == 'OK') {
+
+        console.log(results)
+
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbhUtgWsIXNS2XoeUSft7JtluN8WVhNOI&callback=initMap" async defer>
+        
+        module.exports = index;
+        </script>
+        
+
+
+</body>

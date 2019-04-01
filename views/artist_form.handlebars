@@ -1,55 +1,79 @@
-<div class="container">
+<div class="container my-5 mx-auto p-5">
     <form class="clearfix mb-4" id="artist-form" data-event-id="{{event_id}}">
           
-        <div class="form-group">
-        <label for="artist-name">Name</label>
-        <input type="text" id="artist-name" class="form-control" aria-describedby="artist-name" placeholder="Enter your name or your band's name">
+        <div class="row">
+
+        <div class="form-group col-6">
+        <label for="artist-name">What do we call you?</label>
+        <input type="text" id="artist-name" class="form-control" aria-describedby="artist-name" placeholder="Enter name">
         <p class="invalid-indicator" id="name-invalid">Please enter a name</p>
         </div>
 
-        <div class="form-group">
-        <label for="artist-genre">Genre</label>
-        <input type="text" id="artist-genre" class="form-control" aria-describedby="artist-genre" placeholder="Enter the genre of music you perform">
+        <div class="form-group col-6">
+        <label for="artist-genre">Style or Genre?</label>
+        <input type="text" id="artist-genre" class="form-control" aria-describedby="artist-genre" placeholder="Enter style">
         <p class="invalid-indicator" id="genre-invalid">Please enter a genre</p>
         </div>
+        </div>
 
-        <div class="form-group">
-        <label for="artist-description">About</label>
-        <input type="text" id="artist-description" class="form-control" aria-describedby="artist-description" placeholder="Tell us a little bit about your act">
+        <div class="row">
+            <div class="col-lg-2 col-sm-0"></div>
+        <div class="form-group col-lg-8 col-sm-12 justify-content-center">
+        <label for="artist-description">Tell Us About You:</label>
+        <textarea type="text" id="artist-description" class="form-control" aria-describedby="artist-description" placeholder="Text"></textarea>
         <p class="invalid-indicator" id="about-invalid">Please enter a description</p>
         </div>
-
-        <div class="form-group">
-        <label for="artist-soundcloud">Soundcloud <span class="text-muted">(Optional)</span></label>
-        <input type="text" id="artist-soundcloud" class="form-control" aria-describedby="artist-soundcloud" placeholder="Please provide the link to your Soundcloud page">
+            <div class="col-lg-2 col-sm-0"></div>
         </div>
 
-        <div class="form-group">
-        <label for="artist-bandcamp">BandCamp <span class="text-muted">(Optional)</span></label>
-        <input type="text" id="artist-bandcamp" class="form-control" aria-describedby="artist-bandcamp" placeholder="Please provide the link to your Bandcamp page">
+        {{!-- Starting Social Media information --}}
+
+        <div class="row mb-3">
+            <div class="col-12 text-center" style="font-size: 30px">Social Media:</div>
         </div>
 
-        <div class="form-group">
-        <label for="artist-youtube">YouTube <span class="text-muted">(Optional)</span></label>
-        <input type="text" id="artist-youtube" class="form-control" aria-describedby="artist-youtube" placeholder="Please provide the link to your YouTube channel">
+        {{!-- New Row --}}
+        <div class="row mb-2">
+
+        <div class="form-group col-lg-6 col-sm-12">
+        <label for="artist-soundcloud">Soundcloud <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
+        <input type="text" id="artist-soundcloud" class="form-control" aria-describedby="artist-soundcloud" placeholder="Link or Username">
         </div>
 
-        <div class="form-group">
-        <label for="artist-facebook">Facebook <span class="text-muted">(Optional)</span></label>
-        <input type="text" id="artist-facebook" class="form-control" aria-describedby="artist-facebook" placeholder="Please provide the link to your Facebook page">
+        <div class="form-group col-lg-6">
+        <label for="artist-bandcamp">BandCamp <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
+        <input type="text" id="artist-bandcamp" class="form-control" aria-describedby="artist-bandcamp" placeholder=" ">
+        </div>
         </div>
 
-        <div class="form-group">
-        <label for="artist-twitter">Twitter <span class="text-muted">(Optional)</span></label>
-        <input type="text" id="artist-twitter" class="form-control" aria-describedby="artist-twitter" placeholder="Please provide the link to your Twitter page">
+        {{!-- New Row --}}
+        <div class="row mb-2">
+        <div class="form-group col-lg-6">
+        <label for="artist-youtube">YouTube <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
+        <input type="text" id="artist-youtube" class="form-control" aria-describedby="artist-youtube" placeholder=" ">
         </div>
 
-        <div class="form-group">
-        <label for="artist-instagram">Instagram <span class="text-muted">(Optional)</span></label>
-        <input type="text" id="artist-instagram" class="form-control" aria-describedby="artist-instagram" placeholder="Please provide the link for your Instagram page">
+        <div class="form-group col-lg-6">
+        <label for="artist-facebook">Facebook <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
+        <input type="text" id="artist-facebook" class="form-control" aria-describedby="artist-facebook" placeholder=" ">
+        </div>
         </div>
 
-        <button id="artist-submit" class="btn btn-primary float-right">Submit</button>
+        {{!-- New Row --}}
+
+        <div class="row mb-2">
+        <div class="form-group col-lg-6">
+        <label for="artist-twitter">Twitter <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
+        <input type="text" id="artist-twitter" class="form-control" aria-describedby="artist-twitter" placeholder=" ">
+        </div>
+
+        <div class="form-group col-lg-6">
+        <label for="artist-instagram">Instagram <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
+        <input type="text" id="artist-instagram" class="form-control" aria-describedby="artist-instagram" placeholder=" ">
+        </div>
+        </div>
+
+        <button id="artist-submit" class="btn btn-primary float-right" style="background-color: orange; border: none">Apply!</button>
     </form>
 </div>
 

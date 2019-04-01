@@ -60,7 +60,7 @@ var refreshEvents = function() {
 
     $eventList.empty();
     $eventList.append($event);
-    location.reload();
+    // location.reload();
   });
 };
 

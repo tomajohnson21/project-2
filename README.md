@@ -31,20 +31,21 @@ Version ***1.0.0***
 1. From here you can fill out the application for you or your band to be on the lineup for the event. 
 1. Be sure to include all of the links to your social media so Event planners can get a good idea of what you can do, though this isn't necessarily required. 
 ---
---- 
 ---
+---
+
 ### Technologies 
----
 - [node.js](https://nodejs.org/en/)
 - [express](https://www.npmjs.com/package/express)
 - [express-handlebars](https://www.npmjs.com/package/express-handlebars) 
 - [sequelize](https://www.npmjs.com/package/sequelize)
 - [mysql](https://www.mysql.com/) 
 - [passport](https://www.npmjs.com/package/passport)
+- [moment.js](https://momentjs.com/)
 ---
 
 ### API Information
----
+
 - [Google Maps](https://developers.google.com/maps/documentation/)
 ---
 

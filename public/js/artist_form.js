@@ -81,6 +81,7 @@ var postArtist = function(new_artist) {
 
 function goBackHome(){
     window.location.replace("/");
+
 }
 
 

@@ -143,13 +143,20 @@ function goBackHome(){
     
 }
 
+function clearForm() {
+    $("#event-title").val("");
+    $("#event-location").val("")
+    $("#event-date").val("");
+    $("#event-genre").val("");
+    $("#event-description").val("");
+} 
+
 $("#event-submit").on("click", function(){
 
     event.preventDefault();
     if(validateForm()){
         goBackHome();
     }
-    
 });
 
 $("#title-invalid").hide();
