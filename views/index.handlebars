@@ -14,12 +14,11 @@
 
             {{!-- Links to the "/event/:id" route for the specific event referenced in the database --}}
 
-            <a href="events/{{this.id}}" style="color: Orange; font-size: 30px">{{this.title}}</a>
+            <a href="events/{{this.id}}" class="artist-title">{{this.title}}</a>
             <hr>
-            <p>Genre: {{this.genre}}</p>
-            <p>Location: </p>
-            <p id="address">{{this.street_address}} {{this.city}}, {{this.state}}</p>
-            <p>Date: {{this.date}}</p>
+            <p class="event-content">Genre: <span class="event-text">{{this.genre}}</span> </p>
+            <p id="address" class="event-content">Location: <span class="event-text">{{this.street_address}} {{this.city}}, {{this.state}}</span></p>
+            <p class="event-content">Date: <span class="event-text">{{this.date}}</span></p>
             <hr>
             <button class="btn btn-danger float-right delete text-center" style="max-width: 50px; background-color: orange; Border: none">ｘ</button>
           </li>

@@ -1,20 +1,20 @@
 <div class="container my-5 mx-auto p-5">
-    <form class="clearfix mb-4" id="artist-form" data-event-id="{{event_id}}">
+    <form class="clearfix mb-4 artist-form" id="artist-form" data-event-id="{{event_id}}">
 
         <div class="row mb-3">
-            <div class="col-12 text-center" style="font-size: 40px; color: orange; border-bottom: solid orange 3px">About You:</div>
+            <div class="col-12 text-center" style="font-size: 2em; color: orange;">About You:</div>
         </div>
 
         <div class="row">
 
         <div class="form-group col-6">
-        <label for="artist-name">What do we call you?</label>
+        <label for="artist-name" class="label-text">What do we call you?</label>
         <input type="text" id="artist-name" class="form-control" aria-describedby="artist-name" placeholder="Enter name">
         <p class="invalid-indicator" id="name-invalid">Please enter a name</p>
         </div>
 
         <div class="form-group col-6">
-        <label for="artist-genre">Style or Genre?</label>
+        <label for="artist-genre" class="label-text">Style or Genre?</label>
         <input type="text" id="artist-genre" class="form-control" aria-describedby="artist-genre" placeholder="Enter style">
         <p class="invalid-indicator" id="genre-invalid">Please enter a genre</p>
         </div>
@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-lg-2 col-sm-0"></div>
         <div class="form-group col-lg-8 col-sm-12 justify-content-center">
-        <label for="artist-description">Tell Us About You:</label>
+        <label for="artist-description" class="label-text">Tell Us About You:</label>
         <textarea type="text" id="artist-description" class="form-control" aria-describedby="artist-description" placeholder="Text"></textarea>
         <p class="invalid-indicator" id="about-invalid">Please enter a description</p>
         </div>
@@ -33,19 +33,19 @@
         {{!-- Starting Social Media information --}}
 
         <div class="row mb-3">
-            <div class="col-12 text-center" style="font-size: 40px; color: orange; border-bottom: solid orange 3px">Social Media:</div>
+            <div class="col-12 text-center" style="font-size: 2em; color: orange;">Social Media:</div>
         </div>
 
         {{!-- New Row --}}
         <div class="row mb-2">
 
         <div class="form-group col-lg-6 col-sm-12">
-        <label for="artist-soundcloud">Soundcloud <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
+        <label for="artist-soundcloud" class="label-text">Soundcloud <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
         <input type="text" id="artist-soundcloud" class="form-control" aria-describedby="artist-soundcloud" placeholder="Link or Username">
         </div>
 
         <div class="form-group col-lg-6">
-        <label for="artist-bandcamp">BandCamp <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
+        <label for="artist-bandcamp" class="label-text">BandCamp <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
         <input type="text" id="artist-bandcamp" class="form-control" aria-describedby="artist-bandcamp" placeholder=" ">
         </div>
         </div>
@@ -53,12 +53,12 @@
         {{!-- New Row --}}
         <div class="row mb-2">
         <div class="form-group col-lg-6">
-        <label for="artist-youtube">YouTube <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
+        <label for="artist-youtube" class="label-text">YouTube <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
         <input type="text" id="artist-youtube" class="form-control" aria-describedby="artist-youtube" placeholder=" ">
         </div>
 
         <div class="form-group col-lg-6">
-        <label for="artist-facebook">Facebook <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
+        <label for="artist-facebook" class="label-text">Facebook <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
         <input type="text" id="artist-facebook" class="form-control" aria-describedby="artist-facebook" placeholder=" ">
         </div>
         </div>
@@ -67,12 +67,12 @@
 
         <div class="row mb-2">
         <div class="form-group col-lg-6">
-        <label for="artist-twitter">Twitter <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
+        <label for="artist-twitter" class="label-text">Twitter <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
         <input type="text" id="artist-twitter" class="form-control" aria-describedby="artist-twitter" placeholder=" ">
         </div>
 
         <div class="form-group col-lg-6">
-        <label for="artist-instagram">Instagram <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
+        <label for="artist-instagram" class="label-text">Instagram <span class="text-muted" style="font-size: 12px">(Optional)</span></label>
         <input type="text" id="artist-instagram" class="form-control" aria-describedby="artist-instagram" placeholder=" ">
         </div>
         </div>
