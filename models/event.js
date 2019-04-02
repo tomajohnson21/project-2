@@ -20,7 +20,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       defaultValue: 0
     },
-    location: {
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    street_address: {
       type: DataTypes.STRING,
       allowNull: false
     },
