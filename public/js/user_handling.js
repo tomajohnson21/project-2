@@ -70,8 +70,7 @@ var validateLoginForm = function(){
     var email_valid = false;
     var password_valid = false;
 
-    var email_indicator = $("#login-email-invalid");
-    var password_indicator = $("#login-pw-invalid");
+    var login_indicator = $("#login-invalid");
     
     if(!email){
         login_indicator.show();
