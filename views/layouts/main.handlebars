@@ -88,6 +88,7 @@
                 <i class="fas fa-lock prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput11">Your password: </label>
                 <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                <p class="invalid-indicator" id="login-invalid">Incorrect Email or Password</p>
               </div>
 
               <div class="text-center mt-2 p-3 row">
@@ -111,40 +112,41 @@
           <div class="tab-pane fade" id="panel8" role="tabpanel">
 
             <!--Body-->
-            <div class="modal-body">
               <div class="md-form form-sm mb-2">
                 <i class="fas fa-envelope prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput12">Your email: </label>
                 <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                <p class="invalid-indicator" id="email-invalid">Please enter a valid email</p>
               </div>
 
               <div class="md-form form-sm mb-2">
                 <i class="fas fa-lock prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput13">Your password: </label>
                 <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                <p class="invalid-indicator" id="password-invalid">Please enter a valid password</p>
               </div>
 
               <div class="md-form form-sm mb-2">
                 <i class="fas fa-lock prefix"></i>
-                <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password: </label>
+                <label data-error="wrong" data-success="right" for="modalLRInput14">Confirm password: </label>
                 <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+                <p class="invalid-indicator" id="confirm-invalid">Your passwords do not match</p>
               </div>
 
               <div class="text-center form-sm mt-2">
                 <button class="btn btn-info" style="background-color: orange; border: none; color: white;">Sign up <i class="fas fa-sign-in ml-1"></i></button>
               </div>
-
-            </div>
-            <!--Footer-->
-            <div class="modal-footer">
-              <div class="options text-right">
-                <p class="pt-1">Already have an account? <a href="#panel7" class="blue-text">Log In</a></p>
+              <!--Footer-->
+              <div class="modal-footer">
+                <div class="options text-right">
+                  <p class="pt-1">Already have an account? <a href="#panel7" class="blue-text">Log In</a></p>
+                </div>
+                <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal" style="background-color: orange; border: none; color: white;">Close</button>
               </div>
-              <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal" style="background-color: orange; border: none; color: white;">Close</button>
-            </div>
           </div>
-          <!--/.Panel 8-->
         </div>
+          <!--/.Panel 8-->
+      </div>
 
       </div>
     </div>
@@ -178,32 +180,7 @@
 </div>
 
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=322541875283193&autoLogAppEvents=1"></script>
-<script>
-
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-});
-
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '{your-app-id}',
-      cookie     : true,
-      xfbml      : true,
-      version    : '{api-version}'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+<script src="/js/user_handling.js"></script>
 
 </body>
 

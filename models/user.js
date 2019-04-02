@@ -3,10 +3,7 @@ var bcrypt = require("bcrypt-nodejs")
 module.exports = function(sequelize, DataTypes) {
     
     var User = sequelize.define("User", {
-      username: {
-        type: DataTypes.STRING,
-        validate: {notNull: true, notEmpty: true, unique: true}
-      },
+      
       password: { 
         type: DataTypes.STRING,
         validate: {notNull: true, notEmpty: true}
@@ -15,9 +12,14 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
-      name: {
-          type: DataTypes.STRING,
-          allowNull: false
+      
+      last_login: {
+        type: Sequelize.DATE
+      },
+
+      status: {
+        type: Sequelize.ENUM('active', 'inactive'),
+        defaultValue: 'active'
       }
 
     },
