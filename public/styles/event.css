@@ -101,8 +101,8 @@
   }
   .active{
     color: #FF9E19;
-    border-bottom: solid;
     border-bottom-color: #FF9E19;
+    border-bottom-width:thin;
   }
   
   #text {
@@ -243,6 +243,39 @@
 #modal-nav-link:hover{
   color:#FF9E19;
 }
+.modal-content {
+  border:solid;
+  border-color: #FF9E19;
+  border-width: thick;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+.modal-text-field {
+  width:90%;
+  margin-left: 20px;
+}
+
+.modal-text {
+  font-family: "Lato", sans-serif;
+  color: #585858;
+  margin-left: 20px;
+}
+.modal-button {
+  height: 45px;
+  background-color: #FF9E19;
+  border: #414141;
+  border-width:thin;
+  width: 150px;
+}
+.modal-button:hover{
+  background-color: rgb(252, 168, 50);
+}
+.modal-invalid {
+  margin-left:20px;
+}
+
 
 
 
