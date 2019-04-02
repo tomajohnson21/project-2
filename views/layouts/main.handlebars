@@ -41,7 +41,10 @@
         <a class="nav-link" href="/new_event">New Event</a>
       </li>
       <li class="nav-item">
-        <a href="" class="nav-link" data-toggle="modal" data-target="#modalLRForm">Log in</a>
+        <a href="" class="nav-link" id="login-link" data-toggle="modal" data-target="#user-modal">Log In</a>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link" id="logout-link">Log Out</a>
       </li>
     </ul>
   </div>
@@ -50,7 +53,7 @@
 <div id="fb-root"></div>
 
 <!--Modal: Login / Register Form-->
-<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog cascading-modal" role="document">
     <!--Content-->
     <div class="modal-content">
@@ -61,11 +64,11 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs md-tabs tabs-2 darken-3" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="modal-nav-link" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+            <a class="nav-link active" id="modal-nav-link" data-toggle="tab" href="#login-panel" role="tab"><i class="fas fa-user mr-1"></i>
               Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="modal-nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+            <a class="nav-link" id="modal-nav-link" data-toggle="tab" href="#register-panel" role="tab"><i class="fas fa-user-plus mr-1"></i>
               Register</a>
           </li>
         </ul>
@@ -74,24 +77,24 @@
         <!-- Tab panels -->
         <div class="tab-content">
           <!--Panel 7-->
-          <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+          <div class="tab-pane fade in show active" id="login-panel" role="tabpanel">
 
             <!--Body-->
             <div class="modal-body mb-2 p-3">
               <div class="md-form form-sm mb-2 row">
                 <i class="fas fa-envelope prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput10">Your email: </label>
-                <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
+                <input type="email" id="login-email" class="form-control form-control-sm validate">
               </div>
 
               <div class="md-form form-sm mb-2 row">
                 <i class="fas fa-lock prefix"></i>
                 <label data-error="wrong" data-success="right" for="modalLRInput11">Your password: </label>
-                <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                <input type="password" id="login-password" class="form-control form-control-sm validate">
               </div>
 
               <div class="text-center mt-2 p-3 row">
-                <button class="btn btn-info" style="background-color: orange; border: none; color: white;">Log in <i class="fas fa-sign-in ml-1"></i></button>
+                <button class="btn btn-info" id ="login-button" style="background-color: orange; border: none; color: white;">Log In <i class="fas fa-sign-in ml-1"></i></button>
                 <div class="fb-login-button" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
               </div>
             </div>
@@ -108,37 +111,39 @@
           <!--/.Panel 7-->
 
           <!--Panel 8-->
-          <div class="tab-pane fade" id="panel8" role="tabpanel">
+          <div class="tab-pane fade" id="register-panel" role="tabpanel">
 
             <!--Body-->
             <div class="modal-body">
               <div class="md-form form-sm mb-2">
                 <i class="fas fa-envelope prefix"></i>
-                <label data-error="wrong" data-success="right" for="modalLRInput12">Your email: </label>
-                <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="register-email">Email: </label>
+                <input type="email" id="register-email" class="form-control form-control-sm validate">
+                <p class="invalid-indicator" id="reg-email-invalid">Please Enter a valid Email</p>
               </div>
 
               <div class="md-form form-sm mb-2">
                 <i class="fas fa-lock prefix"></i>
-                <label data-error="wrong" data-success="right" for="modalLRInput13">Your password: </label>
-                <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="register-password">Password: </label>
+                <input type="password" id="register-password" class="form-control form-control-sm validate">
+                <p class="invalid-indicator" id="reg-pw-invalid">Please enter a valid passwordl</p>
               </div>
 
               <div class="md-form form-sm mb-2">
                 <i class="fas fa-lock prefix"></i>
-                <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password: </label>
-                <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="register-confirm">Confirm Password: </label>
+                <input type="password" id="register-confirm" class="form-control form-control-sm validate">
+                <p class="invalid-indicator" id="reg-confirm-invalid">Your passwords do not match</p>
               </div>
 
               <div class="text-center form-sm mt-2">
-                <button class="btn btn-info" style="background-color: orange; border: none; color: white;">Sign up <i class="fas fa-sign-in ml-1"></i></button>
+                <button class="btn btn-info" id="register-button" style="background-color: orange; border: none; color: white;">Sign Up <i class="fas fa-sign-in ml-1"></i></button>
               </div>
-
             </div>
             <!--Footer-->
             <div class="modal-footer">
               <div class="options text-right">
-                <p class="pt-1">Already have an account? <a href="#panel7" class="blue-text">Log In</a></p>
+                <p class="pt-1">Already have an account? <a href="#login-panel" class="blue-text">Log In</a></p>
               </div>
               <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal" style="background-color: orange; border: none; color: white;">Close</button>
             </div>
@@ -151,61 +156,16 @@
     <!--/.Content-->
   </div>
 </div>
-<!--Modal: Login / Register Form-->
       
-        
-
-    
-</div>
-
-
-
-
-
-
-    {{!-- html content brought in through handlebars --}}
+<div>
+  {{!-- html content brought in through handlebars --}}
   {{{body}}}
-
-
-
-
-
-
-
   {{!-- Start of the footer  --}}
+</div>
 <div class="footer" id="footer">
       <p id="footer-text">Copyright© Gig 2019</p>
 </div>
 
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=322541875283193&autoLogAppEvents=1"></script>
-<script>
-
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-});
-
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '{your-app-id}',
-      cookie     : true,
-      xfbml      : true,
-      version    : '{api-version}'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
+<script src="/js/user_handling.js"></script>
 </body>
-
-
 </html>

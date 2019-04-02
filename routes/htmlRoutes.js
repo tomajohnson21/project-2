@@ -1,7 +1,7 @@
 var db = require("../models");
 var moment = require("moment")
 
-module.exports = function(app) {
+module.exports = function(app, passport) {
   // Load index page
   app.get("/", function(req, res) {
     db.Event.findAll({where: {date: {$gte: moment().format("YYYY-MM-DD")}}}).then(function(results) {
@@ -40,28 +40,53 @@ module.exports = function(app) {
     })
   })
 
-  app.get("/new_event", function(req, res) {
+  app.get("/new_event", isLoggedIn, function(req, res) {
       res.render("event_form", {
         style: "create_event.css"
       });
   });
 
 
-  app.get("/events/:id/new_artist", function(req, res) {
+  app.get("/events/:id/new_artist", isLoggedIn, function(req, res) {
     res.render("artist_form", {
       event_id: req.params.id,
       style: "event.css"      
     })
   });
  
-  // app.get("/login", function(req, res){
-  //   res.render("login", {
-  //     style: "styles.css"
-  //   })
-  // })
+  
+  app.get("/users", function(req, res) {
+    db.User.findAll({}).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  // Register new user
+  app.post("/users/register", passport.authenticate("local-signup", {successRedirect: "/", failureRedirect:"/"}));
+
+  // Logout User
+  app.get('/users/logout', function(req, res) {
+    req.session.destroy(function(err){
+
+      res.redirect("/");
+    })
+  });
+
+  app.post('/users/login', passport.authenticate('local-signin', {successRedirect: "/", failureRedirect: "/"}));
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+  function isLoggedIn(req, res, next) {
+ 
+    if (req.isAuthenticated())
+     
+        return next();
+         
+    res.redirect('/');
+ 
+  }
+  
 };
