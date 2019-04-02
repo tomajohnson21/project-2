@@ -9,7 +9,7 @@
             <strong>ID</strong>: {{data.event_data.id}}
           </p> --}}
           <p>
-            <strong>Location</strong>: {{data.event_data.location}}
+            <strong>Location</strong>: {{data.event_data.street_address}} {{data.event_data.city}}, {{data.event_data.state}}
           </p>
           <p>
             <strong>Genre</strong>: {{data.event_data.genre}}
@@ -38,6 +38,10 @@
       </div>
     </div>
   </div>
+<div class="container">
+  <div id="map"></div>
+</div>
+  
 
   <!-- Modal -->
   <div class="modal fade" id="artist-modal" role="dialog">
@@ -70,3 +74,45 @@
 
 
 <script src="/js/event.js"></script>
+{{!-- Google Maps API --}}
+
+<script>
+    var db = require("../models");
+    $("#map").hide();
+        var geocoder;
+        var map;
+function initialize() {
+    
+    geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var mapOptions = {
+            zoom: 12,
+            center: latlng
+        }
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+}
+
+function codeAddress() {
+    $("#map").show();
+    var address = document.getElementById('address').value;
+    geocoder.geocode( { 'address': address}, function(results, status) {
+
+      if (status == 'OK') {
+
+        console.log(results)
+
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbhUtgWsIXNS2XoeUSft7JtluN8WVhNOI&callback=initMap" async defer>
+        module.exports = index;
+</script>

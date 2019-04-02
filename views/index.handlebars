@@ -18,7 +18,7 @@
             <a href="events/{{this.id}}" style="color: Orange; font-size: 30px">{{this.title}}</a>
             <hr>
             <p>Genre: {{this.genre}}</p>
-            <p>Location: {{this.location}}</p>
+            <p>Location: {{this.street_address}} {{this.city}}, {{this.state}}</p>
             <p>Date: {{this.date}}</p>
             <hr>
             <button class="btn btn-danger float-right delete text-center" style="max-width: 50px; background-color: orange; Border: none">ｘ</button>
@@ -37,7 +37,7 @@
 <script src="/js/index.js"></script>
 <script>
     
-    // var db = require("../models");
+    var db = require("../models");
     
 
     $("#map").hide();
