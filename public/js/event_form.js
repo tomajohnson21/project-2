@@ -9,6 +9,9 @@ var validateForm = function(){
     var genre = $("#event-genre").val().trim();
     var description = $("#event-description").val().trim();
     var openings = $("#event-openings").val().trim();
+    var city = $("#event-city").val().trim()
+    var state = $("#event-state").val().trim()
+    
 
     //Variables for validation indicators
     var title_indicator = $("#title-invalid");
@@ -19,6 +22,8 @@ var validateForm = function(){
     var genre_indicator = $("#genre-invalid");
     var description_indicator = $("#description-invalid");
     var openings_indicator = $("#openings-invalid");
+    var city_indicator = $("#city-invalid");
+    var state_indicator = $("#state-invalid")
 
     //Boolean variables for determining if the form is valid
     var title_valid = false;
@@ -29,6 +34,8 @@ var validateForm = function(){
     var genre_valid = false;
     var description_valid = false;
     var openings_valid = false;
+    var city_valid = false;
+    var state_valid = false;
 
     if(!title){
         title_indicator.show();
@@ -100,12 +107,15 @@ var validateForm = function(){
             date: date,
             genre: genre,
             description: description,
-            total_slots: openings
+            total_slots: openings,
+            state: state,
+            city: city
         }
 
         postEvent(event_data);
     } 
 }
+
 var validateState = function(state){
     var stateArr = ['AL', 'AK', 'AZ', 'AR', 'CO', 'CT', 'DC', 'DE', 'FL', 
                     'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 
@@ -199,3 +209,7 @@ $("#date-invalid").hide();
 $("#genre-invalid").hide();
 $("#description-invalid").hide();
 $("#openings-invalid").hide();
+$("#city-invalid").hide();
+$("#state-invalid").hide();
+
+module.exports = event_data;
