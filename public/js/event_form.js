@@ -2,11 +2,14 @@ var validateForm = function(){
 
     //Variables for all form fields
     var title = $("#event-title").val().trim();
-    var location = $("#event-location").val().trim();
+    var street_address = $("#event-location").val().trim();
     var date = $("#event-date").val().trim();
     var genre = $("#event-genre").val().trim();
     var description = $("#event-description").val().trim();
     var openings = $("#event-openings").val().trim();
+    var city = $("#event-city").val().trim()
+    var state = $("#event-state").val().trim()
+    
 
     //Variables for validation indicators
     var title_indicator = $("#title-invalid");
@@ -15,6 +18,8 @@ var validateForm = function(){
     var genre_indicator = $("#genre-invalid");
     var description_indicator = $("#description-invalid");
     var openings_indicator = $("#openings-invalid");
+    var city_indicator = $("#city-invalid");
+    var state_indicator = $("#state-invalid")
 
     //Boolean variables for determining if the form is valid
     var title_valid = false;
@@ -23,6 +28,8 @@ var validateForm = function(){
     var genre_valid = false;
     var description_valid = false;
     var openings_valid = false;
+    var city_valid = false;
+    var state_valid = false;
 
     if(!title){
         title_indicator.show();
@@ -68,15 +75,31 @@ var validateForm = function(){
         openings_valid = true;
     }
 
-    if(title_valid && location_valid && date_valid && genre_valid && description_valid && openings_valid){
+    if(!city){
+        city_indicator.show();
+    } else {
+        city_indicator.hide();
+        city_valid = true;
+    }
+
+    if(!state){
+        state_indicator.show();
+    } else {
+        state_indicator.hide();
+        state_valid = true;
+    }
+
+    if(title_valid && location_valid && date_valid && genre_valid && description_valid && openings_valid && city_valid && state_valid){
 
         var event_data = {
             title: title,
-            location: location,
+            street_address: street_address,
             date: date,
             genre: genre,
             description: description,
-            total_slots: openings
+            total_slots: openings,
+            state: state,
+            city: city
         }
 
         postEvent(event_data)
@@ -165,3 +188,5 @@ $("#date-invalid").hide();
 $("#genre-invalid").hide();
 $("#description-invalid").hide();
 $("#openings-invalid").hide();
+$("#city-invalid").hide();
+$("#state-invalid").hide();
