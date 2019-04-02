@@ -60,7 +60,7 @@ var refreshEvents = function() {
 
     $eventList.empty();
     $eventList.append($event);
-    location.reload();
+    // location.reload();
   });
 };
 
@@ -91,6 +91,10 @@ var handleFormSubmit = function(event) {
   $eventDescription.val("");
 };
 
+function goBackHome(){
+  window.location.replace("/")
+}
+
 // handleDeleteBtnClick is called when an event's delete button is clicked
 // Remove the event from the db and refresh the list
 var handleDeleteBtnClick = function() {
@@ -100,6 +104,7 @@ var handleDeleteBtnClick = function() {
 
   API.deleteEvent(idToDelete).then(function() {
     refreshEvents();
+    goBackHome();
   });
 };
 
