@@ -14,7 +14,7 @@
             <strong>Genre</strong>: {{data.event_data.genre}}
           </p>
           <p>
-            <strong>Description</strong> {{data.event_data.description}}
+            <strong>Description</strong>: {{data.event_data.description}}
           </p>
 
           {{#each data.artist_data}}
@@ -33,6 +33,11 @@
           <p>
             <a href="/">← Back To Home</a>
           </p>
+          <div class="container mb-5">
+          <div class="row">
+          <div id="map" class="justify-content-center p-3 mb-5 col-12"></div>
+          </div>
+          </div>
         </div>
       </div>
     </div>
@@ -66,12 +71,6 @@
       </div>
       
     </div>
-  </div>
-</div>
-
-<div class="container mb-5">
-  <div class="row">
-  <div id="map" class="justify-content-center p-3 mb-5 col-12"></div>
   </div>
 </div>
 
