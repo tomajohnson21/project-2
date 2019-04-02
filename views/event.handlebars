@@ -6,9 +6,6 @@
         <div class="card-body">
 
           <h5 class="card-title">{{data.event_data.title}}</h5>
-          {{!-- <p>
-            <strong>ID</strong>: {{data.event_data.id}}
-          </p> --}}
           <p>
             <strong>Location</strong>: 
           </p>
@@ -87,9 +84,7 @@
 <script>
 
     var db = require("../models");
-    var event_data = require("../public/js/event_form.js");
 
-    // $("#map").hide();
         var geocoder;
         var map;
 function initialize() {
@@ -97,22 +92,21 @@ function initialize() {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(41.8781, -87.6298);
     var mapOptions = {
-            zoom: 9,
+            zoom: 16,
             center: latlng
         }
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-var marker = new google.maps.Marker({
-            map: map,
-            position: latlng
-        });
     codeAddress();
 }
 
 function codeAddress() {
-   // $("#map").show();
-    var address = document.getElementById('address').value;
-    geocoder.geocode( {'address': address}, function(results, status) {
+  
+    var address = document.getElementById("address").textContent;
+
+    console.log(address);
+
+    geocoder.geocode( { 'address': address }, function(results, status) {
 
       if (status == 'OK') {
 
