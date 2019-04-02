@@ -7,14 +7,14 @@
 
           <h5 class="card-title">{{data.event_data.title}}</h5>
           <p>
-            <strong>Location</strong>: 
+            <strong>Location: </strong>: 
           </p>
           <p id="address"> {{data.event_data.street_address}} {{data.event_data.city}}, {{data.event_data.state}}</p>
           <p>
-            <strong>Genre</strong>: {{data.event_data.genre}}
+            <strong>Genre: </strong>: {{data.event_data.genre}}
           </p>
           <p>
-            <strong>Description</strong> {{data.event_data.description}}
+            <strong>Description: </strong> {{data.event_data.description}}
           </p>
 
           {{#each data.artist_data}}
@@ -47,7 +47,7 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="artist-name"></h4>
+          <h4 class="modal-title" id="artist-name" style="color: orange;"></h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
