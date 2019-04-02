@@ -12,7 +12,7 @@
           <p>
             <strong>Location</strong>: 
           </p>
-          <p id="address">{{data.event_data.street_address}} {{data.event_data.city}}, {{data.event_data.state}}</p>
+          <p id="address"> {{data.event_data.street_address}} {{data.event_data.city}}, {{data.event_data.state}}</p>
           <p>
             <strong>Genre</strong>: {{data.event_data.genre}}
           </p>
@@ -87,6 +87,7 @@
 <script>
 
     var db = require("../models");
+    var event_data = require("../public/js/event_form.js");
 
     // $("#map").hide();
         var geocoder;
@@ -94,18 +95,24 @@
 function initialize() {
     
     geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(37.090, 95.712);
+    var latlng = new google.maps.LatLng(41.8781, -87.6298);
     var mapOptions = {
-            zoom: 7,
+            zoom: 9,
             center: latlng
         }
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+var marker = new google.maps.Marker({
+            map: map,
+            position: latlng
+        });
+    codeAddress();
 }
 
 function codeAddress() {
-    $("#map").show();
-    var address = document.getElementById('address').value().trim();
-    geocoder.geocode( { 'address': address}, function(results, status) {
+   // $("#map").show();
+    var address = document.getElementById('address').value;
+    geocoder.geocode( {'address': address}, function(results, status) {
 
       if (status == 'OK') {
 
