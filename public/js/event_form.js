@@ -190,3 +190,5 @@ $("#description-invalid").hide();
 $("#openings-invalid").hide();
 $("#city-invalid").hide();
 $("#state-invalid").hide();
+
+module.exports = event_data;

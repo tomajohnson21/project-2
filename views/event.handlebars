@@ -1,3 +1,4 @@
+<body onload="initialize()">
 <div class="container justify-content-center p-4">
   <div class="row">
     <div class="col-8 offset-2">
@@ -5,12 +6,10 @@
         <div class="card-body">
 
           <h5 class="card-title">{{data.event_data.title}}</h5>
-          {{!-- <p>
-            <strong>ID</strong>: {{data.event_data.id}}
-          </p> --}}
           <p>
-            <strong>Location</strong>: {{data.event_data.street_address}} {{data.event_data.city}}, {{data.event_data.state}}
+            <strong>Location</strong>: 
           </p>
+          <p id="address"> {{data.event_data.street_address}} {{data.event_data.city}}, {{data.event_data.state}}</p>
           <p>
             <strong>Genre</strong>: {{data.event_data.genre}}
           </p>
@@ -38,9 +37,7 @@
       </div>
     </div>
   </div>
-<div class="container">
-  <div id="map"></div>
-</div>
+
   
 
   <!-- Modal -->
@@ -72,30 +69,44 @@
   </div>
 </div>
 
+<div class="container mb-5">
+  <div class="row">
+  <div id="map" class="justify-content-center p-3 mb-5 col-12"></div>
+  </div>
+</div>
 
+</body>
+
+<script src="/js/index.js"></script>
 <script src="/js/event.js"></script>
 {{!-- Google Maps API --}}
 
 <script>
+
     var db = require("../models");
-    $("#map").hide();
+
         var geocoder;
         var map;
 function initialize() {
     
     geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var latlng = new google.maps.LatLng(41.8781, -87.6298);
     var mapOptions = {
-            zoom: 12,
+            zoom: 16,
             center: latlng
         }
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+    codeAddress();
 }
 
 function codeAddress() {
-    $("#map").show();
-    var address = document.getElementById('address').value;
-    geocoder.geocode( { 'address': address}, function(results, status) {
+  
+    var address = document.getElementById("address").textContent;
+
+    console.log(address);
+
+    geocoder.geocode( { 'address': address }, function(results, status) {
 
       if (status == 'OK') {
 
