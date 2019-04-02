@@ -270,9 +270,10 @@ form {
   margin-right: 300px;
 }
 #event-description {
-  width:500px;
+  width: 100%;
 }
 
 .create-event {
   width: 150%;
 }
+
