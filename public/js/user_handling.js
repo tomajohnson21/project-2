@@ -74,20 +74,22 @@ var validateLoginForm = function(){
     var password_indicator = $("#login-pw-invalid");
     
     if(!email){
-        email_indicator.show();
+        login_indicator.show();
     } else if (!email.includes("@")) {
-        email_indicator.show();
+        login_indicator.show();
     } else {
-        email_indicator.hide();
+        login_indicator.hide();
         email_valid = true;
+
+        if(!password){
+            login_indicator.show();
+        } else {
+            login_indicator.hide();
+            password_valid = true;
+        }
     }
 
-    if(!password){
-        password_indicator.show();
-    } else {
-        password_indicator.hide();
-        password_valid = true;
-    }
+    
 
     if(email_valid && password_valid){
 
@@ -124,6 +126,7 @@ $("#logout-link").on("click", function(){
     })
 })
 
+$("#login-invalid").hide();
 $("#reg-email-invalid").hide();
 $("#reg-pw-invalid").hide();
 $("#reg-confirm-invalid").hide();
