@@ -1,7 +1,7 @@
 var validateRegisterForm = function(){
     var email = $("#register-email").val().trim();
     var password = $("#register-password").val().trim();
-    var confirm = $("#register-password").val().trim();
+    var confirm = $("#register-confirm").val().trim();
 
     var email_valid = false;
     var password_valid = false;
