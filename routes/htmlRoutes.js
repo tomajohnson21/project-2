@@ -1,12 +1,13 @@
 var db = require("../models");
+var moment = require("moment")
 
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Event.findAll({}).then(function(results) {
+    db.Event.findAll({where: {date: {$gte: moment().format("YYYY-MM-DD")}}}).then(function(results) {
       res.render("index", {
-        msg: "Check out these awesome events near you!",
         events: results,
+        style: "event.css"
       });
     });
   })
@@ -19,7 +20,13 @@ module.exports = function(app) {
       
       db.Artist.findAll({where: {EventId: req.params.id}}).then(function(artist_results){
         
-        res.render("event", {data: {event_data: event_results, artist_data: artist_results}})
+        res.render("event", {
+          data: {
+            event_data: event_results, 
+            artist_data: artist_results
+          },
+          style: "event.css"
+        })
       });
     });
   });
@@ -41,14 +48,17 @@ module.exports = function(app) {
 
 
   app.get("/events/:id/new_artist", function(req, res) {
-    res.render("artist_form", {event_id: req.params.id})
+    res.render("artist_form", {
+      event_id: req.params.id,
+      style: "event.css"      
+    })
   });
  
-  app.get("/login", function(req, res){
-    res.render("login", {
-      style: "styles.css"
-    })
-  })
+  // app.get("/login", function(req, res){
+  //   res.render("login", {
+  //     style: "styles.css"
+  //   })
+  // })
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

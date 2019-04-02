@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
       },
     date: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
       allowNull: false
     },
     total_slots: {
