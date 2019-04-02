@@ -11,12 +11,27 @@
         </div>
 
         <div class="form-group col-lg-7 col-sm-12 col-md-6">
-        <label for="event-location">Event Location:</label>
-        <input type="text" id="event-location" class="form-control" aria-describedby="event-location" placeholder="Address">
-        <p class="invalid-indicator" id="location-invalid">Please enter a location</p>
+        <label for="event-address">Street Address:</label>
+        <input type="text" id="event-address" class="form-control" aria-describedby="event-address" placeholder="Address">
+        <p class="invalid-indicator" id="address-invalid">Please enter a location</p>
         </div>
 
 
+
+    </div>
+
+    <div class="row">
+        <div class="form-group col-lg-8 col-sm-12 col-md-6">
+        <label for="event-city">City:</label>
+        <input type="text" id="event-city" class="form-control" aria-describedby="event-location" placeholder="City">
+        <p class="invalid-indicator" id="city-invalid">Please enter a location</p>
+        </div>
+
+        <div class="form-group col-lg-4 col-sm-12 col-md-6">
+        <label for="event-state">State (or DC for Washington DC):</label>
+        <input type="text" id="event-state" class="form-control" aria-describedby="event-location" placeholder="AL">
+        <p class="invalid-indicator" id="state-invalid">Please enter a location</p>
+        </div>
     </div>  
 
         {{!-- New Row --}}
@@ -25,13 +40,13 @@
         <div class="col-lg-1 col-md-0 col-sm-0"></div>
 
         <div class="form-group col-lg-5 col-sm-6 col-md-6">
-        <label for="event-date">Event Date:</label>
+        <label for="event-date">Date:</label>
         <input type="text" id="event-date" class="form-control" aria-describedby="event-date" placeholder="YYYY-MM-DD">
         <p class="invalid-indicator" id="date-invalid">Please enter a valid date</p>
         </div>
 
         <div class="form-group col-lg-5 col-sm-6 col-md-6">
-        <label for="event-genre">Event Genre:</label>
+        <label for="event-genre">Genre:</label>
         <input type="text" id="event-genre" class="form-control" aria-describedby="event-genre" placeholder="Genre">
         <p class="invalid-indicator" id="genre-invalid">Please enter a genre</p>
         </div>
@@ -55,7 +70,7 @@
     <div class="row">
             <div class="col-lg-4 col-md-3 col-sm-0"></div>
         <div class="form-group col-lg-3 col-md-6 col-sm-12">
-        <label for="event-openings">Artist Slots:</label>
+        <label for="event-openings">Available Openings:</label>
         <input type="number" min="0" id="event-openings" class="form-control" aria-describedby="event-openings" placeholder="0">
         <p class="invalid-indicator" id="openings-invalid">Please enter a valid number of openings</p>
         </div>
