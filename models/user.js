@@ -1,4 +1,5 @@
-var bcrypt = require("bcrypt-nodejs")
+var bcrypt = require("bcrypt-nodejs");
+var Sequelize = require("sequelize");
 
 module.exports = function(sequelize, DataTypes) {
     
