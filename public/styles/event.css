@@ -244,4 +244,29 @@
   color:#FF9E19;
 }
 
+
+
+/* NEW_ARTIST CSS */
+
+.label-text {
+  font-family: "Lato", sans-serif;
+  color:#414141;
+}
+
+.artist-form {
+  background-color: white;
+  height:115%;
+  width: 90%;
+  border:solid;
+  border-color:black;
+}
+
+.ar-label {
+  font-family: "Lato", sans-serif;
+  color:#414141;
+  
+}
+
+
+
   
