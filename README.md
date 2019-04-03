@@ -42,6 +42,7 @@ Version ***1.0.0***
 - [mysql](https://www.mysql.com/) 
 - [passport](https://www.npmjs.com/package/passport)
 - [moment.js](https://momentjs.com/)
+- [bcrypt.js](https://www.npmjs.com/package/bcrypt)
 ---
 
 ### API Information
