@@ -26,7 +26,7 @@ Version ***1.0.0***
 
 
 ### Instructions for *Artists*:
-1. Sing into the application with a unique username and password. 
+1. Sign into the application with a unique username and password. 
 1. Find an event on the home page that you would like to apply for and click the title of the event. The description, date and location will be viewable on the home screen. 
 1. From here you can fill out the application for you or your band to be on the lineup for the event. 
 1. Be sure to include all of the links to your social media so Event planners can get a good idea of what you can do, though this isn't necessarily required. 
